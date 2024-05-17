@@ -5,3 +5,7 @@
  */
 
 
+function signupFunc () {
+    var message = document.getElementById("messageErreurText");
+    message.innerHTML = "ça marche !";
+}

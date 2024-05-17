@@ -1,0 +1,14 @@
+body {
+    background-color: #F4F6F9;
+    font: 1em "Inter", Arial, sans-serif;
+    color: #333;
+}
+
+#entete {
+    font: 1em "Jua", Arial, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Add this line to create space between child containers */
+}

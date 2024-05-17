@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Acceuil Élève</title>
+        <link rel="stylesheet" href="accueilEleve.css">
+        <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
+    </head>
+    <body>
+        <div id="entete">
+            <div id="logo">
+                <img src="images/logo.png" alt="logo">
+            </div>
+            <div id="nomEntete">
+                <h1>Instruct’If</h1>
+                <button id="boutonDeconnexion">Deconnexion</button>
+            </div>
+            <div id="infoseleve">
+                <div id="imageEtudiant">
+                    <img src="images/etudiant.png" alt="etudiant">
+                </div>
+                <div id="info">
+                    <h3><span id="nomEleve"></span></h3>
+                    <p>Élève de <span id="classeEleve"></span></p>
+                </div>
+                <div id="boutonModifier">
+                    <button id="boutonHisto">Mon historique</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div id="acceuilEleve">
+            <h3>Demande de soutien</h3>
+            <div id="demandeSoutien">
+                <div id="boutonsMatieres">
+                    <div id="ligne1">
+                        <button id="boutonAnglais">Anglais</button>
+                        <button id="boutonChimie">Chimie</button>
+                        <button id="boutonMaths">Maths</button>
+                        <button id="boutonFrancais">Français</button>
+                    </div>
+                    <div id="ligne2">
+                        <button id="boutonGeo">Géographie</button>
+                        <button id="boutonHistoire">Histoire</button>
+                        <button id="boutonPhysique">Physique</button>
+                        <button id="boutonSVT">SVT</button>
+                    </div>
+                </div>
+                <div id="explication">
+                    <p>Explication de la demande (facultatif)</p>
+                    <textarea id="explicationDemande" name="explicationDemande" placeholder="Veuillez décrire brièvement l’objectif de votre demande de soutien." ></textarea>
+                </div>
+                </div>
+                <div id="bouton">
+                    <button id="boutonSoutien">Demander un soutien</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

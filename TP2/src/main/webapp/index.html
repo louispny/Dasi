@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TD DASI - Initiation Web</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>TD DASI - Initiation Web</h1>
-        <p>Ce TD vous initie aux technologies Web. Etes-vous prêts ?</p>
-        <a href="connexion.html">Aller à la page de connexion</a>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="connexion.css">
+    <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div id="entete">
+        <div id="logo">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        <div id="nomEntete">
+            <h1>Instruct’If</h1>
+        </div>
+    </div>
+    <div id="login-form" >
+        <h2>Connectez-vous</h2>
+        <form>
+            <div id="champEmail" class="champ">
+                <label for="username">EMAIL</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div id = "motdepasse" class="champ">
+                <label for="password">MOT DE PASSE</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div id="bouton" class="button-container">
+                <button type="button" id="login" onclick="loginFunc()" >Continuer</button>
+            </div>
+            <div id="messageErreur">
+                <p id="messageErreurText"></p>
+            </div>
+            <div id="inscription"class="button-container">
+                <p>Vous n’avez pas encore de compte ?</p>
+                <button type="button" id="signin" onclick="goToInscription()">S’inscrire</button>
+            </div>
+        </form>
+    </div>
+    <script src="connexion.js"></script>
+</body>
+
 </html>

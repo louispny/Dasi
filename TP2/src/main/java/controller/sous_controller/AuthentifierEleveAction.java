@@ -6,6 +6,7 @@
 package controller.sous_controller;
 
 import javax.servlet.http.HttpServletRequest;
+import metier.modele.Eleve;
 import metier.modele.Intervenant;
 import metier.service.Service;
 /**
@@ -17,14 +18,14 @@ public class AuthentifierEleveAction extends Action {
     public void executer(HttpServletRequest request){
         String todo = request.getParameter("todo");
         Service service = new Service() ;
-        Intervenant interv = service.authentifierIntervenant(request.getParameter("login"), request.getParameter("password")) ;
-        if (interv != null)
+        Eleve un_eleve = service.authentifierEleve(request.getParameter("login"), request.getParameter("password")) ;
+        if (un_eleve != null)
         {
-            request.setAttribute("user", interv);
+            request.setAttribute("eleve", un_eleve);
         }
         else 
         {
-            request.setAttribute("user", null);
+            request.setAttribute("eleve", null);
         }
         
         System.out.println("Ca fonctionne : "+ todo);

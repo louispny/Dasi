@@ -28,9 +28,9 @@ $(document).ready( function () {
                     .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
                         console.log('Response',response); // LOG dans Console Javascript
                         if (response.connexion) {
-                            $('#messageErreurText').html("Connexion de "+ response.utilisateur.prenom+ " "+ response.utilisateur.nom + " (ID "+ response.utilisateur.id+")");  // Message pour le paragraphe de notification
-                            // TODO: afficher les informations du client dans la notification
+                            // // TODO: afficher les informations du client dans la notification
                             // Exemple: Connexion de Ada Lovelace (ID 1)
+                            window.location.href = response.utilisateur.redirectURL ; 
                         }
                         else {
                             $('#messageErreurText').html("Erreur de Connexion"); // Message pour le paragraphe de notification

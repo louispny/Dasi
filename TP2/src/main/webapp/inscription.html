@@ -4,6 +4,7 @@
 <head>  
     <meta charset="UTF-8">
     <title>Inscription</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="inscription.css">
     <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
 </head>
@@ -31,7 +32,15 @@
                 </div>
                 <div id="champClasse" class="champ">
                     <label for="Classe">CLASSE</label>
-                    <input type="text" id="classe" name="classe">
+                    <select id="classe" name="classe">
+                        <option value=0>Terminale</option>
+                        <option value=1>Premiere</option>
+                        <option value=2>Seconde</option>
+                        <option value=3>Troisieme</option>
+                        <option value=4>Quatrieme</option>
+                        <option value=5>Cinquieme</option>
+                        <option value=6>Sixieme</option>
+                    </select>
                 </div>
             </div>
             <div id="ligne2" class="lignes">

@@ -6,8 +6,8 @@
 package controller;
 
 
+import controller.sous_controller.AuthentifierIntervenantAction;
 import controller.sous_controller.AuthentifierEleveAction;
-import controller.sous_controller.AuthentifierUtilisateurAction;
 import controller.sous_controller.InscrireEleveAction;
 
 import dao.JpaUtil;
@@ -72,8 +72,8 @@ public class ActionServlet extends HttpServlet {
             System.out.println("Trace : todo = " + todo );
             switch(todo) {
                 case "connecter" : {
-                    new AuthentifierUtilisateurAction().executer(request);
                     new AuthentifierEleveAction().executer(request);
+                    new AuthentifierIntervenantAction().executer(request);
                     Intervenant interv = (Intervenant)request.getAttribute("user");
                     Eleve eleve = (Eleve)request.getAttribute("eleve") ; 
                     if ( interv != null) {

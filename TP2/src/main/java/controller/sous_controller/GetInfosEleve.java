@@ -20,5 +20,9 @@ public class GetInfosEleve extends Action {
         HttpSession session = request.getSession(true);
         Service service = new Service() ;
         Eleve eleve = service.findEleve((Long)session.getAttribute("id"));
+        System.out.println(session.getAttribute("id"));
+        System.out.println(eleve.getNom());
+
+        request.setAttribute("eleve", eleve);
     }
 }

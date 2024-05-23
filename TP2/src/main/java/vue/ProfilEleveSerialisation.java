@@ -29,6 +29,7 @@ public class ProfilEleveSerialisation extends Serialisation {
         Eleve user = (Eleve)request.getAttribute("eleve");
         if (user != null)
         {
+            System.out.println("test purement test");
             jsonUser.addProperty("id",user.getId()) ; 
             jsonUser.addProperty("nom",user.getNom()) ; 
             jsonUser.addProperty("prenom",user.getPrenom()) ; 

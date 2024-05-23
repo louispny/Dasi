@@ -14,7 +14,7 @@ function afficherInformationsEleve() {
     })
     .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
         console.log('Response',response); // LOG dans Console Javascript
-        if (response.eleve=!null) {
+        if (response.inscription) {
             // // TODO: afficher les informations de l'élève
             $('#nomEleve').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
         }
@@ -25,7 +25,7 @@ function afficherInformationsEleve() {
     .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
         console.log('Error',error); // LOG dans Console Javascript
         alert("Erreur lors de l'appel AJAX");
-    })
+    });
 }
 
 function afficherBoutonsMatieres() {
@@ -61,5 +61,5 @@ function afficherBoutonsMatieres() {
 
 document.addEventListener('DOMContentLoaded', function() {
     afficherInformationsEleve();
-    afficherBoutonsMatieres();
+    // afficherBoutonsMatieres();
 });

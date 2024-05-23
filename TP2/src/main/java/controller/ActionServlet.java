@@ -101,6 +101,7 @@ public class ActionServlet extends HttpServlet {
                 case "getEleve" : {
                     new GetInfosEleve().executer(request) ; 
                     new ProfilEleveSerialisation().appliquer(request, response);
+                    break;
                 }
             }
             

@@ -1,11 +1,13 @@
 controller\sous_controller\AuthentifierEleveAction.class
 controller\sous_controller\InscrireEleveAction.class
 controller\sous_controller\GetMatieresAction.class
-vue\MatieresSerialisation.class
 vue\ProfilUtilisateurSerialisation.class
 controller\sous_controller\GetInfosEleve.class
+controller\sous_controller\AuthentifierIntervenantAction.class
+vue\InterventionSerialisation.class
+vue\MatieresSerialisation.class
 controller\sous_controller\Action.class
 controller\ActionServlet.class
+controller\sous_controller\DemanderInterventionAction.class
 vue\ProfilEleveSerialisation.class
 vue\Serialisation.class
-controller\sous_controller\AuthentifierIntervenantAction.class

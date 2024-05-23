@@ -6,7 +6,10 @@
 package controller;
 
 
+import controller.sous_controller.AuthentifierEleveAction;
 import controller.sous_controller.AuthentifierUtilisateurAction;
+import controller.sous_controller.InscrireEleveAction;
+
 import dao.JpaUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.http.HttpSession;
+import metier.modele.Eleve;
 import metier.modele.Intervenant;
+import vue.ProfilEleveSerialisation;
 import vue.ProfilUtilisateurSerialisation;
 
 /**
@@ -68,12 +73,29 @@ public class ActionServlet extends HttpServlet {
             switch(todo) {
                 case "connecter" : {
                     new AuthentifierUtilisateurAction().executer(request);
+                    new AuthentifierEleveAction().executer(request);
                     Intervenant interv = (Intervenant)request.getAttribute("user");
+                    Eleve eleve = (Eleve)request.getAttribute("eleve") ; 
                     if ( interv != null) {
                         session.setAttribute("id", interv.getId());
                     }
+                    
+                    if ( eleve != null) {
+                        session.setAttribute("id", eleve.getId()) ;
+                        
+                    }
                     new ProfilUtilisateurSerialisation().appliquer(request, response);
                     break;
+                }
+                case "inscrire" : {
+                    
+                    new InscrireEleveAction().executer(request) ; 
+                    Eleve eleve = (Eleve)request.getAttribute("eleve") ; 
+                    if ( eleve != null) {
+                        session.setAttribute("id", eleve.getId()); 
+                    }
+                    new ProfilEleveSerialisation().appliquer(request, response);
+                    break ; 
                 }
             }
             

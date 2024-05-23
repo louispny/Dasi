@@ -14,8 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import metier.modele.Eleve;
 import metier.modele.Intervenant;
-import modele.TestUtilisateur;
 
 /**
  *
@@ -29,12 +29,24 @@ public class ProfilUtilisateurSerialisation extends Serialisation {
         JsonObject container = new JsonObject() ;
         JsonObject jsonUser = new JsonObject() ; 
         Intervenant user = (Intervenant)request.getAttribute("user");
+        Eleve eleve = (Eleve)request.getAttribute("eleve");
         if (user != null)
         {
+            jsonUser.addProperty("redirectURL", "") ;
             jsonUser.addProperty("id",user.getId()) ; 
             jsonUser.addProperty("nom",user.getNom()) ; 
             jsonUser.addProperty("prenom",user.getPrenom()) ; 
             jsonUser.addProperty("mail",user.getMail()) ; 
+            container.addProperty("connexion", true) ; 
+            container.add("utilisateur", jsonUser);
+        }
+        else if (eleve != null)
+        {
+            jsonUser.addProperty("redirectURL", "accueilEleve.html") ;
+            jsonUser.addProperty("id",eleve.getId()) ; 
+            jsonUser.addProperty("nom",eleve.getNom()) ; 
+            jsonUser.addProperty("prenom",eleve.getPrenom()) ; 
+            jsonUser.addProperty("mail",eleve.getMail()) ; 
             container.addProperty("connexion", true) ; 
             container.add("utilisateur", jsonUser);
         }

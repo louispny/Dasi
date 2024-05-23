@@ -79,10 +79,14 @@ public class ActionServlet extends HttpServlet {
                     Eleve eleve = (Eleve)request.getAttribute("eleve") ; 
                     if ( interv != null) {
                         session.setAttribute("id", interv.getId());
+                        new ProfilUtilisateurSerialisation().appliquer(request, response); 
+                        break ; 
                     }
                     
                     if ( eleve != null) {
                         session.setAttribute("id", eleve.getId()) ;
+                        new ProfilEleveSerialisation().appliquer(request, response);
+                        break ;
                         
                     }
                     new ProfilUtilisateurSerialisation().appliquer(request, response);

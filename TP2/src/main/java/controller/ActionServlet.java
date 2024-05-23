@@ -9,6 +9,7 @@ package controller;
 import controller.sous_controller.AuthentifierIntervenantAction;
 import controller.sous_controller.AuthentifierEleveAction;
 import controller.sous_controller.GetInfosEleve;
+import controller.sous_controller.GetMatieresAction;
 import controller.sous_controller.InscrireEleveAction;
 
 import dao.JpaUtil;
@@ -24,6 +25,7 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 import metier.modele.Eleve;
 import metier.modele.Intervenant;
+import vue.MatieresSerialisation;
 import vue.ProfilEleveSerialisation;
 import vue.ProfilUtilisateurSerialisation;
 
@@ -105,6 +107,11 @@ public class ActionServlet extends HttpServlet {
                 case "getEleve" : {
                     new GetInfosEleve().executer(request) ; 
                     new ProfilEleveSerialisation().appliquer(request, response);
+                    break;
+                }
+                case "getMatieres" : {
+                    new GetMatieresAction().executer(request);
+                    new MatieresSerialisation().appliquer(request, response);
                     break;
                 }
             }

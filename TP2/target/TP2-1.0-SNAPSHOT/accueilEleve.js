@@ -49,7 +49,7 @@ function afficherBoutonsMatieres() {
                 if (i % 4 == 0) {
                     $('#listeMatieres').append('<div id="ligne' + (i/4+1) + '" class="ligneBouton"></div>');
                 }
-                $('#ligne' + (i/4+1)).append('<button class="bouton3" id="matiere' + response.listeMatieres[i].id + '">' + response.listeMatieres[i].nom + '</button>');
+                $('#ligne' + (i/4+1)).append('<button class="bouton3" id="matiere' + response.listeMatieres[i].nom + '">' + response.listeMatieres[i].nom + '</button>');
                 //$('#listeMatieres').append('<button class="btn btn-primary" id="matiere' + response.listeMatieres[i].id + '">' + response.listeMatieres[i].nom + '</button>');
 
             }
@@ -66,5 +66,5 @@ function afficherBoutonsMatieres() {
 
 document.addEventListener('DOMContentLoaded', function() {
     afficherInformationsEleve();
-    // afficherBoutonsMatieres();
+    afficherBoutonsMatieres();
 });

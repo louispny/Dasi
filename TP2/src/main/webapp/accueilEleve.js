@@ -66,5 +66,5 @@ function afficherBoutonsMatieres() {
 
 document.addEventListener('DOMContentLoaded', function() {
     afficherInformationsEleve();
-    // afficherBoutonsMatieres();
+    afficherBoutonsMatieres();
 });

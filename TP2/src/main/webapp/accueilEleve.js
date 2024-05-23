@@ -48,9 +48,9 @@ function afficherBoutonsMatieres() {
             console.log("la lilste n'est pas vide");
             for (let i = 0; i < response.listeMatieres.length; i++) {
                 if (i % 4 == 0) {
-                    $('#boutonsMatieres').append('<div id="ligne' + (i/4+1) + '" class="ligneBouton"></div>');
+                    $('#boutonsMatieres').append('<div id="ligne' + (Math.floor(i/4)+1) + '" class="ligneBouton"></div>');
                 }
-                $('#ligne' + (i/4+1)).append('<button class="bouton3" id="matiere' + response.listeMatieres[i].nom + '">' + response.listeMatieres[i].nom + '</button>');
+                $('#ligne' + (Math.floor(i/4)+1)).append('<button class="bouton3" id="matiere' + response.listeMatieres[i].nom + '">' + response.listeMatieres[i].nom + '</button>');
                 console.log(response.listeMatieres[i].nom);
                 //$('#listeMatieres').append('<button class="btn btn-primary" id="matiere' + response.listeMatieres[i].id + '">' + response.listeMatieres[i].nom + '</button>');
 
@@ -63,7 +63,7 @@ function afficherBoutonsMatieres() {
     .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
         console.log('Error',error); // LOG dans Console Javascript
         alert("Erreur lors de l'appel AJAX");
-    })
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {

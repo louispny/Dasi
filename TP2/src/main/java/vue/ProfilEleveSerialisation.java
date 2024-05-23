@@ -30,7 +30,7 @@ public class ProfilEleveSerialisation extends Serialisation {
         if (user != null)
         {
             switch(request.getParameter("todo")){
-                case "connexion" : {
+                case "connecter" : {
                     container.addProperty("connexion", true) ;
                     break ; 
                 }
@@ -75,15 +75,14 @@ public class ProfilEleveSerialisation extends Serialisation {
                 }
             }
             jsonUser.addProperty("classe", level); 
-            if ("connexion".equals(request.getParameter("todo"))) {
+            if ("connecter".equals(request.getParameter("todo"))) {
+                jsonUser.addProperty("redirectURL", "accueilEleve.html") ;
                 container.add("utilisateur", jsonUser);
             }
-            else container.add("eleve", jsonUser);
+            else {container.add("eleve", jsonUser);}
         }
         else 
-        {
-            if (user != null)
-            {   
+        {   
             switch(request.getParameter("todo")){
                 case "connexion" : 
                     {
@@ -101,7 +100,7 @@ public class ProfilEleveSerialisation extends Serialisation {
                     break ;
                     }
             }
-            }
+            
         }
         response.setContentType("application/json;charset=UTF-8");
             PrintWriter out ;

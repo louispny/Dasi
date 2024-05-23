@@ -17,6 +17,7 @@ function afficherInformationsEleve() {
         if (response.getEleve) {
             // // TODO: afficher les informations de l'élève
             $('#nomEleve').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
+            $('#classeEleve').html(response.eleve.classe); // Message pour le paragraphe de notification
         }
         else {
             $('#nomEleve').html("Jsp"); // Message pour le paragraphe de notification
@@ -45,6 +46,10 @@ function afficherBoutonsMatieres() {
         let contener = document.getElementById('listeMatieres');
         if (response.listeMatieres != null) {
             for (let i = 0; i < response.listeMatieres.length; i++) {
+                if (i % 4 == 0) {
+                    $('#listeMatieres').append('<div id="ligne' + (i/4+1) + '" class="ligneBouton"></div>');
+                }
+                $('#ligne' + (i/4+1)).append('<button class="bouton3" id="matiere' + response.listeMatieres[i].id + '">' + response.listeMatieres[i].nom + '</button>');
                 //$('#listeMatieres').append('<button class="btn btn-primary" id="matiere' + response.listeMatieres[i].id + '">' + response.listeMatieres[i].nom + '</button>');
 
             }

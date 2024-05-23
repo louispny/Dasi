@@ -14,7 +14,7 @@ function afficherInformationsEleve() {
     })
     .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
         console.log('Response',response); // LOG dans Console Javascript
-        if (response.inscription) {
+        if (response.getEleve) {
             // // TODO: afficher les informations de l'élève
             $('#nomEleve').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
         }

@@ -43,7 +43,6 @@ public class ProfilEleveSerialisation extends Serialisation {
                     break ;
                 }
             }
-            System.out.println("test purement test");
             jsonUser.addProperty("id",user.getId()) ; 
             jsonUser.addProperty("nom",user.getNom()) ; 
             jsonUser.addProperty("prenom",user.getPrenom()) ; 
@@ -76,7 +75,10 @@ public class ProfilEleveSerialisation extends Serialisation {
                 }
             }
             jsonUser.addProperty("classe", level); 
-            container.add("eleve", jsonUser);
+            if ("connexion".equals(request.getParameter("todo"))) {
+                container.add("utilisateur", jsonUser);
+            }
+            else container.add("eleve", jsonUser);
         }
         else 
         {

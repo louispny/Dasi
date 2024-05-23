@@ -16,4 +16,11 @@ public class EleveDao {
         List<Eleve> resultList = query.getResultList();
         return resultList.isEmpty() ? null : resultList.get(0);
     }
+
+    public Eleve findByID(String para_id) {
+        TypedQuery<Eleve> query = JpaUtil.obtenirContextePersistance().createQuery("SELECT e FROM Eleve e WHERE e.id = :id", Eleve.class);
+        query.setParameter("id", para_id);
+        List<Eleve> resultList = query.getResultList();
+        return resultList.isEmpty() ? null : resultList.get(0);
+    }
 }

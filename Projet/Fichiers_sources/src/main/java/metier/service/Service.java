@@ -187,6 +187,24 @@ public class Service {
         return e;
     }
 
+    public Eleve findEleve(long id) {
+
+        EleveDao eleveDao = new EleveDao();
+        Eleve e;
+        JpaUtil.creerContextePersistance();
+
+        e = eleveDao.findById(id);
+
+        if (e == null) // mail faux
+        {
+            System.out.println("Aucun compte associé à cette adresse mail : " + mail);
+        }
+
+        JpaUtil.fermerContextePersistance();
+        return e;
+    }
+
+
     public Intervenant authentifierIntervenant(String mail, String motDePasse) {
 
         IntervenantDao intervenantDao = new IntervenantDao();

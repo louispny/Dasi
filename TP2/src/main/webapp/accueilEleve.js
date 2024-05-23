@@ -103,7 +103,7 @@ $(document).ready( function () {
         .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response',response); // LOG dans Console Javascript
             if (response.valide) {
-                $('#demandeValidee').css('display', 'true');
+                $('#demandeValidee').css('display', 'block');
             }
         })
         .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX

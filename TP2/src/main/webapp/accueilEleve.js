@@ -74,8 +74,11 @@ document.addEventListener('click', function (event) {
     if (event.target.classList.contains('bouton3')) {
         console.log("clic sur un bouton de matière"); // LOG dans Console Javascript
         console.log(event.target.id);
-        $('.bouton3').css('background-color', 'gray');
-        event.target.style.backgroundColor = 'blue';
+        $('.bouton3').css('background-color', 'darkgray');
+        $('.bouton3').css('color', 'gray');
+        $('.bouton4').css('background-color', '020E36');
+        $('.bouton4').css('color', 'white');
+        event.target.style.backgroundColor = '020E36';
         matiere = event.target.id.substr(7);
         console.log(matiere);
     }
@@ -83,35 +86,49 @@ document.addEventListener('click', function (event) {
 
 $(document).ready( function () {
     $('#boutonSoutien').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        if (matiere == "") {
+            alert("Veuillez choisir une matière");
+        }
+        else {
+            console.log("clic sur le bouton de soutien"); // LOG dans Console Javascript
+            //$('#messageErreurText').html("Inscription..."); // Message pour le paragraphe de notification
 
-        console.log("clic sur le bouton de soutien"); // LOG dans Console Javascript
-        //$('#messageErreurText').html("Inscription..."); // Message pour le paragraphe de notification
-
-        // Récupération de la valeur des champs du formulaire
-        let description = $('#explicationDemande').val();
-        // Appel AJAX
-        $.ajax({
-            url: './ActionServlet',
-            method: 'POST',
-            data: {
-                todo: 'demandeIntervention',
-                matiere: matiere,
-                detail: description
-            },
-            dataType: 'json'
-        })
-        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
-            console.log('Response',response); // LOG dans Console Javascript
-            if (response.valide) {
-                $('#demandeValidee').css('display', 'block');
-            }
-        })
-        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
-            console.log('Error',error); // LOG dans Console Javascript
-            alert("Erreur lors de l'appel AJAX");
-        })
-        .always( function () { // Fonction toujours appelée
-            
-        });
+            // Récupération de la valeur des champs du formulaire
+            let description = $('#explicationDemande').val();
+            // Appel AJAX
+            $.ajax({
+                url: './ActionServlet',
+                method: 'POST',
+                data: {
+                    todo: 'demandeIntervention',
+                    matiere: matiere,
+                    detail: description
+                },
+                dataType: 'json'
+            })
+            .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
+                console.log('Response',response); // LOG dans Console Javascript
+                if (response.valide) {
+                    $('#demandeValidee').css('display', 'block');
+                }
+                else {
+                    $('#demandeRefusee').css('display', 'block');
+                }
+            })
+            .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+                console.log('Error',error); // LOG dans Console Javascript
+                alert("Erreur lors de l'appel AJAX");
+            })
+            .always( function () { // Fonction toujours appelée
+                
+            });
+        }
     });
 });
+
+$(document).ready( function () {
+    $('#boutonRetour').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        $('#demandeRefusee').css('display', 'none');
+    });
+});
+        

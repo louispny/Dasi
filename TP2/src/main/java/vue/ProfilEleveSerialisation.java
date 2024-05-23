@@ -29,18 +29,77 @@ public class ProfilEleveSerialisation extends Serialisation {
         Eleve user = (Eleve)request.getAttribute("eleve");
         if (user != null)
         {
+            switch(request.getParameter("todo")){
+                case "connexion" : {
+                    container.addProperty("connexion", true) ;
+                    break ; 
+                }
+                case "inscription" : {
+                    container.addProperty("inscription", true) ;
+                    break ; 
+                }
+                case "getEleve" : {
+                    container.addProperty("getEleve", true) ; 
+                    break ;
+                }
+            }
             System.out.println("test purement test");
             jsonUser.addProperty("id",user.getId()) ; 
             jsonUser.addProperty("nom",user.getNom()) ; 
             jsonUser.addProperty("prenom",user.getPrenom()) ; 
             jsonUser.addProperty("mail",user.getMail()) ; 
-            jsonUser.addProperty("classe", user.getNiveau());
-            container.addProperty("inscription", true) ; 
+            String level = "Terminale" ; 
+            switch(user.getNiveau()) {
+                case 1 : {
+                    level = "Premiere" ;
+                    break ;
+                }
+                case 2 : {
+                    level = "Seconde" ; 
+                    break ;
+                }
+                case 3 : {
+                    level = "Troisieme" ; 
+                    break ;
+                }
+                case 4 : {
+                    level = "Quatrieme" ; 
+                    break ;
+                }
+                case 5 : {
+                    level = "Cinquieme" ; 
+                    break ;
+                }
+                case 6 : {
+                    level = "Sixieme" ; 
+                    break ;
+                }
+            }
+            jsonUser.addProperty("classe", level); 
             container.add("eleve", jsonUser);
         }
         else 
         {
-            container.addProperty("inscription", false);
+            if (user != null)
+            {   
+            switch(request.getParameter("todo")){
+                case "connexion" : 
+                    {
+                    container.addProperty("connexion", false) ;
+                    break ;
+                    }
+                case "inscription" : 
+                    {
+                    container.addProperty("inscription", false) ;
+                    break ;
+                    }
+                case "getEleve" : 
+                    {
+                    container.addProperty("getEleve", false) ; 
+                    break ;
+                    }
+            }
+            }
         }
         response.setContentType("application/json;charset=UTF-8");
             PrintWriter out ;
@@ -51,5 +110,7 @@ public class ProfilEleveSerialisation extends Serialisation {
             } catch (IOException ex) {
                 Logger.getLogger(ProfilEleveSerialisation.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
     }
-}
+
+        

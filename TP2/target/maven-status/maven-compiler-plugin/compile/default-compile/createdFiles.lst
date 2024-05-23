@@ -1,6 +1,9 @@
+controller\sous_controller\AuthentifierEleveAction.class
+controller\sous_controller\InscrireEleveAction.class
+modele\TestUtilisateur.class
+controller\sous_controller\AuthentifierUtilisateurAction.class
 vue\ProfilUtilisateurSerialisation.class
 controller\sous_controller\Action.class
 controller\ActionServlet.class
-modele\TestUtilisateur.class
+vue\ProfilEleveSerialisation.class
 vue\Serialisation.class
-controller\sous_controller\AuthentifierUtilisateurAction.class

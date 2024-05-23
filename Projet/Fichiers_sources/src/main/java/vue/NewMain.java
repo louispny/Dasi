@@ -16,13 +16,15 @@ public class NewMain {
         JpaUtil.creerFabriquePersistance();
 
         Service unservice = new Service();
-        //unservice.initBD();
+        unservice.initBD();
         
         
         
         ////////////// test du service envoiBilan
+        /*
         Eleve eleve_1 = new Eleve("griguer", "mehdi", 3, "mehdigriguer2003@gmail.com", "mdptest");
         unservice.inscrireEleve(eleve_1, "0692155T"); // eleve et son code d'établissement
+        */
         /*
         Eleve eleve = unservice.authentifierEleve("mehdigriguer2003@gmail.com", "mdptest");
         unservice.creerIntervention("français", eleve, "detail intervention");

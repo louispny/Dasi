@@ -46,6 +46,7 @@ $(document).ready( function () {
                     .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
                         console.log('Response',response); // LOG dans Console Javascript
                         if (response.inscription) {
+                            $('#messageErreurText').html("Inscription "+ response.eleve.prenom+ " "+ response.eleve.nom + " (ID "+ response.eleve.id+")Classe : " + response.eleve.classe);  // Message pour le paragraphe de notification
                             // TODO: afficher les informations du client dans la notification
                             // Exemple: Connexion de Ada Lovelace (ID 1)
                         }

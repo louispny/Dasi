@@ -6,6 +6,7 @@
 package controller.sous_controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -15,6 +16,5 @@ public abstract class Action {
 
     public Action() {
     }
-    
     public abstract void executer(HttpServletRequest request);
 }

@@ -187,17 +187,17 @@ public class Service {
         return e;
     }
 
-    public Eleve findEleve(long id) {
+    public Eleve findEleve(Long id) {
 
         EleveDao eleveDao = new EleveDao();
         Eleve e;
         JpaUtil.creerContextePersistance();
 
-        e = eleveDao.findById(id);
+        e = eleveDao.findByID(id);
 
         if (e == null) // mail faux
         {
-            System.out.println("Aucun compte associé à cette adresse mail : " + mail);
+            System.out.println("Aucun compte associé à cet id : " + id);
         }
 
         JpaUtil.fermerContextePersistance();

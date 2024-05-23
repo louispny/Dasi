@@ -8,6 +8,7 @@ package controller;
 
 import controller.sous_controller.AuthentifierIntervenantAction;
 import controller.sous_controller.AuthentifierEleveAction;
+import controller.sous_controller.GetInfosEleve;
 import controller.sous_controller.InscrireEleveAction;
 
 import dao.JpaUtil;
@@ -96,6 +97,10 @@ public class ActionServlet extends HttpServlet {
                     }
                     new ProfilEleveSerialisation().appliquer(request, response);
                     break ; 
+                }
+                case "getEleve" : {
+                    new GetInfosEleve().executer(request) ; 
+                    new ProfilEleveSerialisation().appliquer(request, response);
                 }
             }
             

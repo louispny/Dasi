@@ -43,15 +43,12 @@ function afficherBoutonsMatieres() {
     })
     .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
         console.log('Response',response); // LOG dans Console Javascript
-        console.log("c'est deja ca");
         if (response.listeMatieres != null) {
-            console.log("la lilste n'est pas vide");
             for (let i = 0; i < response.listeMatieres.length; i++) {
                 if (i % 4 == 0) {
                     $('#boutonsMatieres').append('<div id="ligne' + (Math.floor(i/4)+1) + '" class="ligneBouton"></div>');
                 }
                 $('#ligne' + (Math.floor(i/4)+1)).append('<button class="bouton3" id="matiere' + response.listeMatieres[i].nom + '">' + response.listeMatieres[i].nom + '</button>');
-                console.log(response.listeMatieres[i].nom);
                 //$('#listeMatieres').append('<button class="btn btn-primary" id="matiere' + response.listeMatieres[i].id + '">' + response.listeMatieres[i].nom + '</button>');
 
             }

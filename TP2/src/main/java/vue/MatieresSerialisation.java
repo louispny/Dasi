@@ -35,7 +35,6 @@ public class MatieresSerialisation extends Serialisation {
             for (Matiere matiere : liste)
             {
                 JsonObject jsonMatiere = new JsonObject();
-                jsonMatiere.addProperty("id", matiere.getId());
                 jsonMatiere.addProperty("nom", matiere.getNom());
                 courseList.add(jsonMatiere);
             }

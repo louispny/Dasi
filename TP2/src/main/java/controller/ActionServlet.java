@@ -111,6 +111,7 @@ public class ActionServlet extends HttpServlet {
                 }
                 case "getMatieres" : {
                     new GetMatieresAction().executer(request);
+                    System.out.println(request.getAttribute(todo));
                     new MatieresSerialisation().appliquer(request, response);
                     break;
                 }

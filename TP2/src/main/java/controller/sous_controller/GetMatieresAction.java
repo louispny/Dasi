@@ -18,8 +18,10 @@ public class GetMatieresAction extends Action {
     @Override
     public void executer(HttpServletRequest request)
     {
+        System.out.println("trace1");
         Service service = new Service();
         List<Matiere> list = service.obtenirListeDesMatieres();
+        System.out.println(list);
         request.setAttribute("listeMatieres", list);
     }
 }

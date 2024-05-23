@@ -38,7 +38,7 @@ public class MatieresSerialisation extends Serialisation {
                 jsonMatiere.addProperty("nom", matiere.getNom());
                 courseList.add(jsonMatiere);
             }
-            
+            container.add("listeMatieres", courseList);
         }
         response.setContentType("application/json;charset=UTF-8");
             PrintWriter out ;

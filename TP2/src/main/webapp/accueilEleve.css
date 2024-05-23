@@ -168,3 +168,32 @@ body {
     padding-left: 100px;
     padding-right: 100px;
 }
+
+#demandeValidee {
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    max-width: 50vw; /* Add this line to limit the width */
+    max-height: 50vh; /* Add this line to limit the height */
+    margin: 0 auto; /* Add this line to center the form horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#demandeValidee img {
+    width: 70px;
+    height: 100px;
+}
+
+#boutonsValide {
+    margin-top: 20px;
+}

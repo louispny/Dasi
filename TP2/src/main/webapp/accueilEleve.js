@@ -67,3 +67,27 @@ document.addEventListener('DOMContentLoaded', function() {
     afficherInformationsEleve();
     afficherBoutonsMatieres();
 });
+
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('bouton3')) {
+        console.log("clic sur un bouton de matière"); // LOG dans Console Javascript
+        console.log(event.target.id);
+        $('.bouton3').css('background-color', 'gray');
+        event.target.style.backgroundColor = 'blue';
+        var nomMatiere = event.target.id.substr(7);
+        console.log(nomMatiere);
+        // Appel AJAX
+        $.ajax({
+            url: './ActionServlet',
+            method: 'POST',
+            data: {
+                matiere: nomMatiere
+            },
+            dataType: 'json'
+        })
+        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error',error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        });
+    }
+});

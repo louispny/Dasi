@@ -48,7 +48,7 @@ function afficherBoutonsMatieres() {
             console.log("la lilste n'est pas vide");
             for (let i = 0; i < response.listeMatieres.length; i++) {
                 if (i % 4 == 0) {
-                    $('#listeMatieres').append('<div id="ligne' + (i/4+1) + '" class="ligneBouton"></div>');
+                    $('#boutonsMatieres').append('<div id="ligne' + (i/4+1) + '" class="ligneBouton"></div>');
                 }
                 $('#ligne' + (i/4+1)).append('<button class="bouton3" id="matiere' + response.listeMatieres[i].nom + '">' + response.listeMatieres[i].nom + '</button>');
                 console.log(response.listeMatieres[i].nom);

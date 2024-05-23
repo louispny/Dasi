@@ -32,6 +32,13 @@ public class MatieresSerialisation extends Serialisation {
         List<Matiere> liste = (List<Matiere>)request.getAttribute("listeMatieres");
         if (liste != null)
         {
+            for (Matiere matiere : liste)
+            {
+                JsonObject jsonMatiere = new JsonObject();
+                jsonMatiere.addProperty("id", matiere.getId());
+                jsonMatiere.addProperty("nom", matiere.getNom());
+                courseList.add(jsonMatiere);
+            }
             
         }
         response.setContentType("application/json;charset=UTF-8");

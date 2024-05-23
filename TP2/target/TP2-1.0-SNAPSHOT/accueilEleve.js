@@ -1,3 +1,5 @@
+let matiere = "";
+
 function afficherInformationsEleve() {
     // on récupére les informations de l'élève avec une requête AJAX
     // on récupére les informations de l'élève
@@ -66,4 +68,15 @@ function afficherBoutonsMatieres() {
 document.addEventListener('DOMContentLoaded', function() {
     afficherInformationsEleve();
     afficherBoutonsMatieres();
+});
+
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('bouton3')) {
+        console.log("clic sur un bouton de matière"); // LOG dans Console Javascript
+        console.log(event.target.id);
+        $('.bouton3').css('background-color', 'gray');
+        event.target.style.backgroundColor = 'blue';
+        matiere = event.target.id.substr(7);
+        console.log(matiere);
+    }
 });

@@ -29,6 +29,7 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 import metier.modele.Eleve;
 import metier.modele.Intervenant;
+import vue.EnvoiNoteSerialisation;
 import vue.InterventionSerialisation;
 import vue.MatieresSerialisation;
 import vue.ProfilEleveSerialisation;
@@ -138,6 +139,7 @@ public class ActionServlet extends HttpServlet {
                 }
                 case "envoiNote" : {
                     new EnvoyerNoteAction().executer(request) ; 
+                    new EnvoiNoteSerialisation().appliquer(request, response);
                     break;
                 }
             }

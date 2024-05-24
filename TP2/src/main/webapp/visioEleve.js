@@ -31,8 +31,12 @@ $(document).ready( function () {
             },
             dataType: 'json'
         })
-        .done( function () { // Fonction appelée en cas d'appel AJAX réussi
-            window.location.href = "accueilEleve.html";
+        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            if (response.validation ) {
+                console.log("Note envoyée");
+                window.location.href = "accueilEleve.html";
+            }
+            
         })
         .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
             console.log('Error',error); // LOG dans Console Javascript

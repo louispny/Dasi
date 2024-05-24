@@ -21,15 +21,17 @@ public class EnvoyerNoteAction extends Action {
     @Override
     public void executer(HttpServletRequest request) {
         System.out.println("Envoi de la note");
-        int note = (int) request.getAttribute("note");
+        String note = (String) request.getParameter("note");
         System.out.println("Note : " + note);
+        Integer i = Integer.parseInt(note);
+        System.out.println("Note : " + i);
         HttpSession session = request.getSession(true);
         Long idInterv = (Long) session.getAttribute("intervention");
         System.out.println("Id intervention : " + idInterv);
         Service service = new Service();
         Intervention intervention = service.findIntervention(idInterv);
         System.out.println("Intervenant : " + intervention.getIntervenant());
-        service.envoiNote(intervention, note);
+        service.envoiNote(intervention, i);
 
     }
     

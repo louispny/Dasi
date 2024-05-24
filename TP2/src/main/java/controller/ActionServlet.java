@@ -10,6 +10,7 @@ import controller.sous_controller.AuthentifierIntervenantAction;
 import controller.sous_controller.AuthentifierEleveAction;
 import controller.sous_controller.DemanderInterventionAction;
 import controller.sous_controller.GetInfosEleve;
+import controller.sous_controller.GetInfosEleveIntervention;
 import controller.sous_controller.GetInfosIntervenant;
 import controller.sous_controller.GetMatieresAction;
 import controller.sous_controller.InscrireEleveAction;
@@ -126,6 +127,13 @@ public class ActionServlet extends HttpServlet {
                 case "getIntervenant"  : {
                     new GetInfosIntervenant().executer(request) ; 
                     new ProfilUtilisateurSerialisation().appliquer(request, response) ; 
+                }
+                case "getIntervention" : {
+                    new GetInfosEleveIntervention().executer(request) ; 
+                    new InterventionSerialisation().appliquer(request, response);
+                }
+                case "envoiNote" : {
+                    new EnvoyerNoteAction().executer(request) ; 
                 }
             }
             

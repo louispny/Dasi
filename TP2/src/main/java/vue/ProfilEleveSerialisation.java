@@ -32,10 +32,12 @@ public class ProfilEleveSerialisation extends Serialisation {
             switch(request.getParameter("todo")){
                 case "connecter" : {
                     container.addProperty("connexion", true) ;
+                    jsonUser.addProperty("eleve", true) ;
                     break ; 
                 }
-                case "inscription" : {
+                case "inscrire" : {
                     container.addProperty("inscription", true) ;
+                    jsonUser.addProperty("redirectURL", "index.html") ;
                     break ; 
                 }
                 case "getEleve" : {
@@ -76,7 +78,6 @@ public class ProfilEleveSerialisation extends Serialisation {
             }
             jsonUser.addProperty("classe", level); 
             if ("connecter".equals(request.getParameter("todo"))) {
-                jsonUser.addProperty("redirectURL", "accueilEleve.html") ;
                 container.add("utilisateur", jsonUser);
             }
             else {container.add("eleve", jsonUser);}
@@ -89,7 +90,7 @@ public class ProfilEleveSerialisation extends Serialisation {
                     container.addProperty("connexion", false) ;
                     break ;
                     }
-                case "inscription" : 
+                case "inscrire" : 
                     {
                     container.addProperty("inscription", false) ;
                     break ;

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 $(document).ready( function () {
                 $('#login').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
 
@@ -30,7 +31,13 @@ $(document).ready( function () {
                         if (response.connexion) {
                             // // TODO: afficher les informations du client dans la notification
                             // Exemple: Connexion de Ada Lovelace (ID 1)
-                            window.location.href = response.utilisateur.redirectURL ; 
+                            if (response.utilisateur.eleve) 
+                            {
+                                window.location.href = 'accueilEleve.html' ;
+                            }
+                            else {
+                                window.location.href = 'accueilIntervenant.html' ;
+                            } 
                         }
                         else {
                             $('#messageErreurText').html("Erreur de Connexion"); // Message pour le paragraphe de notification

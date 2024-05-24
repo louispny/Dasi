@@ -31,7 +31,7 @@ public class ProfilUtilisateurSerialisation extends Serialisation {
         Intervenant user = (Intervenant)request.getAttribute("user");
         if (user != null)
         {
-            jsonUser.addProperty("redirectURL", "") ;
+            jsonUser.addProperty("eleve", false) ;
             jsonUser.addProperty("id",user.getId()) ; 
             jsonUser.addProperty("nom",user.getNom()) ; 
             jsonUser.addProperty("prenom",user.getPrenom()) ; 

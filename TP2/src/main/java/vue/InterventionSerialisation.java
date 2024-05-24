@@ -29,7 +29,7 @@ public class InterventionSerialisation extends Serialisation{
         JsonObject container = new JsonObject() ;
         JsonObject jsonUser = new JsonObject() ; 
         Intervention intervention = (Intervention)request.getAttribute("intervention");
-        if (intervention != null)
+        if (intervention.getDate_debut() != null)
         {
             container.addProperty("valide", true);
             container.addProperty("redirectURL", "") ; 

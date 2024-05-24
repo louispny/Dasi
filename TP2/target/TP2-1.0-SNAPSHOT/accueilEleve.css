@@ -148,6 +148,7 @@ body {
     height: 150px;
     margin-left: 0;
     margin-right: 0;
+    border-radius: 5px;
 }
 
 #bouton {
@@ -158,9 +159,9 @@ body {
 }
 
 .bouton4 {
-    background-color: #020E36;
+    background-color: darkgray;
     font: 2em "Jua", Arial, sans-serif;
-    color: #fff;
+    color: gray;
     border: none;
     padding: 5px;
     border-radius: 30px; /* Add this line to create rounded corners */
@@ -169,7 +170,7 @@ body {
     padding-right: 100px;
 }
 
-#demandeValidee {
+.popup {
     padding: 30px;
     background-color: #ffffff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -189,11 +190,20 @@ body {
     display: none;
 }
 
-#demandeValidee img {
+.popup img {
     width: 70px;
     height: 100px;
 }
 
+#demandeRefusee img {
+    width: 100px;
+    height: 100px;
+}
+
 #boutonsValide {
+    margin-top: 20px;
+}
+
+#boutonRetour {
     margin-top: 20px;
 }

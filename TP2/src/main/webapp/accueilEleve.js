@@ -70,18 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
     afficherBoutonsMatieres();
 });
 
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('bouton3')) {
+$('#boutonsMatieres').on('click', '.bouton3', function(event) {
         console.log("clic sur un bouton de matière"); // LOG dans Console Javascript
         console.log(event.target.id);
         $('.bouton3').css('background-color', 'darkgray');
         $('.bouton3').css('color', 'gray');
-        $('.bouton4').css('background-color', '020E36');
+        $('.bouton4').css('background-color', '#020E36');
         $('.bouton4').css('color', 'white');
-        event.target.style.backgroundColor = '020E36';
+        $('#'+event.target.id).css('background-color', '#020E36');
+        $('#'+event.target.id).css('color', 'white');
+
         matiere = event.target.id.substr(7);
         console.log(matiere);
-    }
 });
 
 $(document).ready( function () {
@@ -129,6 +129,12 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('#boutonRetour').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
         $('#demandeRefusee').css('display', 'none');
+    });
+});
+        
+$(document).ready( function () {
+    $('#boutonDeconnexion').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        window.location.href = "index.html" ;
     });
 });
         

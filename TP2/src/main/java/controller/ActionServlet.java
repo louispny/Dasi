@@ -124,17 +124,21 @@ public class ActionServlet extends HttpServlet {
                     new GetInfosEleve().executer(request);
                     new DemanderInterventionAction().executer(request) ; 
                     new InterventionSerialisation().appliquer(request, response) ;
+                    break;  
                 }
                 case "getIntervenant"  : {
                     new GetInfosIntervenant().executer(request) ; 
                     new ProfilUtilisateurSerialisation().appliquer(request, response) ; 
+                    break;
                 }
                 case "getIntervention" : {
                     new GetInfosEleveIntervention().executer(request) ; 
                     new InterventionSerialisation().appliquer(request, response);
+                    break;
                 }
                 case "envoiNote" : {
                     new EnvoyerNoteAction().executer(request) ; 
+                    break;
                 }
             }
             

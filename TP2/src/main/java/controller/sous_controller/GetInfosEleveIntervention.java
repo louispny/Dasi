@@ -5,10 +5,9 @@
  */
 package controller.sous_controller;
 
-import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import metier.modele.Eleve;
+import metier.modele.Intervenant;
 import metier.modele.Intervention;
 import metier.service.Service;
 
@@ -22,7 +21,7 @@ public class GetInfosEleveIntervention extends Action {
             
         HttpSession session = request.getSession(true);
         Service service = new Service() ; 
-        Intervention intervention = service.findIntervention((Long)session.getAttribute("intervention")) ;
+        Intervention intervention = service.getInterventionEnCours(service.findIntervenant((Long)session.getAttribute("id"))) ;
         request.setAttribute("intervention", intervention) ;  
     }
     

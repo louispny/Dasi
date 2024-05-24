@@ -31,6 +31,17 @@ public class ProfilUtilisateurSerialisation extends Serialisation {
         Intervenant user = (Intervenant)request.getAttribute("user");
         if (user != null)
         {
+            switch(request.getParameter("todo")){
+                case "connecter" : {
+                    container.addProperty("connexion", true) ;
+                    jsonUser.addProperty("eleve", false) ;
+                    break ; 
+                }
+                case "getIntervenant" : {
+                    container.addProperty("getIntervenant", true) ; 
+                    break ;
+                }
+            }
             jsonUser.addProperty("eleve", false) ;
             jsonUser.addProperty("id",user.getId()) ; 
             jsonUser.addProperty("nom",user.getNom()) ; 

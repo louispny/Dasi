@@ -24,7 +24,7 @@ $(document).ready( function () {
                         $('#messageErreurText').text("Les mots de passe ne correspondent pas").show();
                         return;
                     } else {
-                        $('#messageErreurText').text("").show();
+                        $('#messageErreurText').text("Inscription en cours...").show();
                     }
                     // Appel AJAX
                     $.ajax({
@@ -49,7 +49,7 @@ $(document).ready( function () {
                             $('#messageErreurText').html("Inscription "+ response.eleve.prenom+ " "+ response.eleve.nom + " (ID "+ response.eleve.id+")Classe : " + response.eleve.classe);  // Message pour le paragraphe de notification
                             // TODO: afficher les informations du client dans la notification
                             // Exemple: Connexion de Ada Lovelace (ID 1)
-                            goToURL('accueilEleve.html')  ;
+                            window.location.href = 'accueilEleve.html'  ;
                         }
                         else {
                             $('#messageErreurText').html("Erreur d'inscription"); // Message pour le paragraphe de notification
@@ -65,6 +65,3 @@ $(document).ready( function () {
                 });
             });
             
-function goToURL(url) {
-    window.location.href = url ;
-}

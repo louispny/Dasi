@@ -153,7 +153,7 @@ body {
 
 #bouton {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     margin-top: 20px;
 }
@@ -207,3 +207,9 @@ body {
 #boutonRetour {
     margin-top: 20px;
 }
+#messageAttente {
+    color: red;
+    text-align: center;
+    height: 10px;
+}
+    

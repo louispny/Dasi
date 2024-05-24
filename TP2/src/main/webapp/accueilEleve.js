@@ -95,6 +95,7 @@ $(document).ready( function () {
 
             // Récupération de la valeur des champs du formulaire
             let description = $('#explicationDemande').val();
+            $('#messageAttente').html("Demande en cours de traitement...");
             // Appel AJAX
             $.ajax({
                 url: './ActionServlet',
@@ -108,6 +109,8 @@ $(document).ready( function () {
             })
             .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
                 console.log('Response',response); // LOG dans Console Javascript
+                
+                $('#messageAttente').html("");
                 if (response.valide) {
                     $('#demandeValidee').css('display', 'block');
                 }
@@ -129,6 +132,12 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('#boutonRetour').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
         $('#demandeRefusee').css('display', 'none');
+    });
+});
+
+$(document).ready( function () {
+    $('#boutonVisio').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        window.location.href = "visioEleve.html";
     });
 });
         

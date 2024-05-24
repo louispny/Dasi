@@ -115,3 +115,9 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+svg {
+    height: 40px;
+    fill: gray;
+    cursor: pointer;
+}

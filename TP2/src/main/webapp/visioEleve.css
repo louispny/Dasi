@@ -108,3 +108,10 @@ body {
     border-radius: 30px; /* Add this line to create rounded corners */
     cursor: pointer;
 }
+
+#stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

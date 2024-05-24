@@ -17,6 +17,13 @@ public class InterventionDao {
         JpaUtil.obtenirContextePersistance().merge(intervention); // maj de l'intervention dans la BD
     }
 
+    public Intervention findById(Long para_id) {
+        TypedQuery<Intervention> query = JpaUtil.obtenirContextePersistance().createQuery("SELECT i FROM Intervention i WHERE i.id = :id", Intervention.class);
+        query.setParameter("id", para_id);
+        List<Intervention> resultList = query.getResultList();
+        return resultList.isEmpty() ? null : resultList.get(0);
+    }
+    
     public List<Intervention> HistoriqueEleve(Eleve eleve) {
         TypedQuery<Intervention> query = JpaUtil.obtenirContextePersistance().createQuery(
                 "SELECT i FROM Intervention i WHERE i.eleve = :eleve ORDER BY i.date_debut DESC", Intervention.class); // requete JPQL et type attendu

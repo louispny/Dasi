@@ -204,22 +204,30 @@ public class Service {
     }
     
     public Intervenant findIntervenant(Long id) {
-        System.out.println("trace1");
         IntervenantDao intervenantDao = new IntervenantDao() ; 
         Intervenant i ; 
         JpaUtil.creerContextePersistance();
-        System.out.println("trace2");
         i = intervenantDao.findByID(id) ; 
-        System.out.println("trace3");
         if (i == null) //id faux
         {
             System.out.println("Aucun compte associé à cet id : " + id) ; 
         }
-        System.out.println("trace4");
         JpaUtil.fermerContextePersistance();
         return i ; 
     }
 
+    public Intervention findIntervention(Long id) {
+        InterventionDao interventionDao = new InterventionDao() ; 
+        Intervention i ; 
+        JpaUtil.creerContextePersistance();
+        i = interventionDao.findById(id) ; 
+        if (i == null) //id faux
+        {
+            System.out.println("Aucun compte associé à cet id : " + id) ; 
+        }
+        JpaUtil.fermerContextePersistance();
+        return i ; 
+    }
 
     public Intervenant authentifierIntervenant(String mail, String motDePasse) {
 

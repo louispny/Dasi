@@ -45,52 +45,50 @@ public class InterventionSerialisation extends Serialisation{
                 
             }
             case "getIntervention" : {
-                container.addProperty("valide", true) ; 
-                
-            String nom_etablissement = intervention.getEleve().getEtablissement().getNom() ; 
-            String prenom = intervention.getEleve().getPrenom() ; 
-            jsonUser.addProperty("nom",intervention.getEleve().getNom()) ; 
-            jsonUser.addProperty("prenom", intervention.getEleve().getPrenom()) ; 
-            String level = "Terminale" ; 
-            switch(intervention.getEleve().getNiveau()) {
-                case 1 : {
-                        level = "Premiere" ;
-                        break ;
-                    }
-                    case 2 : {
-                        level = "Seconde" ; 
-                        break ;
-                    }
-                    case 3 : {
-                        level = "Troisieme" ; 
-                        break ;
-                    }
-                    case 4 : {
-                        level = "Quatrieme" ; 
-                        break ;
-                    }
-                    case 5 : {
-                        level = "Cinquieme" ; 
-                        break ;
-                    }
-                    case 6 : {
-                        level = "Sixieme" ; 
-                        break ;
-                    }
-            }
+                container.addProperty("valide", true) ;  
+                jsonUser.addProperty("etablissement",intervention.getEleve().getEtablissement().getNom()) ;
+                jsonUser.addProperty("nom",intervention.getEleve().getNom()) ; 
+                jsonUser.addProperty("prenom", intervention.getEleve().getPrenom()) ; 
+                String level = "Terminale" ; 
+                switch(intervention.getEleve().getNiveau()) {
+                    case 1 : {
+                            level = "Premiere" ;
+                            break ;
+                        }
+                        case 2 : {
+                            level = "Seconde" ; 
+                            break ;
+                        }
+                        case 3 : {
+                            level = "Troisieme" ; 
+                            break ;
+                        }
+                        case 4 : {
+                            level = "Quatrieme" ; 
+                            break ;
+                        }
+                        case 5 : {
+                            level = "Cinquieme" ; 
+                            break ;
+                        }
+                        case 6 : {
+                            level = "Sixieme" ; 
+                            break ;
+                        }
+                }
                 jsonUser.addProperty("classe", level) ;
-                
+                jsonUser.addProperty("matiere", intervention.getMatiere().getNom());
             }
         }
-            container.add("intervention", jsonUser);
-            response.setContentType("application/json;charset=UTF-8");
-            PrintWriter out ;
-            try {
-                out = response.getWriter();
-                out.println(gson.toJson(container));
-                out.close();
-            } catch (IOException ex) {
-                Logger.getLogger(ProfilUtilisateurSerialisation.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        container.add("intervention", jsonUser);
+        response.setContentType("application/json;charset=UTF-8");
+        PrintWriter out ;
+        try {
+            out = response.getWriter();
+            out.println(gson.toJson(container));
+            out.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ProfilUtilisateurSerialisation.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

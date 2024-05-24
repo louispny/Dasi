@@ -52,7 +52,14 @@ public class ProfilUtilisateurSerialisation extends Serialisation {
         }
         else 
         {
-            container.addProperty("connexion", false);
+            switch(request.getParameter("todo")) {
+                case "connecter" : {
+                    container.addProperty("connexion", false);
+                }
+                case "getIntervenant" : {
+                    container.addProperty("getIntervenant", false);
+                }
+            }
         }
         response.setContentType("application/json;charset=UTF-8");
             PrintWriter out ;

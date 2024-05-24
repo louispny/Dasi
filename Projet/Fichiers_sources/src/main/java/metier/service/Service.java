@@ -54,7 +54,6 @@ public class Service {
             Matiere matiereEspagnol = new Matiere("espagnol");
             matiereDao.creer(matiereEspagnol);
             System.out.println("Création des matières dans la bd.");
-
             Etudiant intervenant_1 = new Etudiant("benzema", "karim", 6, 2, "kb@gmail.com", "mdpkb");
             intervenant_1.setUniversite("Sorbonne");
             intervenant_1.setSpecialite("langues contemporaines");

@@ -26,6 +26,6 @@ public class GetInfosIntervenant extends Action {
         System.out.println(session.getAttribute("id"));
         System.out.println(intervenant.getNom());
         System.out.println("------");
-        request.setAttribute("intervenant", intervenant);
+        request.setAttribute("user", intervenant);
     }
 }

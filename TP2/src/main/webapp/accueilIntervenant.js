@@ -3,7 +3,7 @@ let matiere = "";
 function afficherInformationsIntervenant() {
     // on récupére les informations de l'élève avec une requête AJAX
     // on récupére les informations de l'élève
-    console.log("récupération des infos de l’élève"); // LOG dans Console Javascript
+    console.log("récupération des infos de l’intervenant"); // LOG dans Console Javascript
 
     // Appel AJAX
     $.ajax({
@@ -18,7 +18,7 @@ function afficherInformationsIntervenant() {
         console.log('Response',response); // LOG dans Console Javascript
         if (response.getIntervenant) {
             // // TODO: afficher les informations de l'élève
-            $('#nomIntervenant').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
+            $('#nomIntervenant').html(response.utilisateur.prenom + " " + response.utilisateur.nom); // Message pour le paragraphe de notification
         }
         else {
             $('#nomIntervenant').html("Jsp"); // Message pour le paragraphe de notification
@@ -30,9 +30,41 @@ function afficherInformationsIntervenant() {
     });
 }
 
+function afficherInformationsIntervention() {
+    // on récupére les informations de l'élève avec une requête AJAX
+    // on récupére les informations de l'élève
+    console.log("récupération des infos de l’intervention"); // LOG dans Console Javascript
+
+    // Appel AJAX
+    $.ajax({
+        url: './ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'getIntervention'
+        },
+        dataType: 'json'
+    })
+    .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
+        console.log('Response',response); // LOG dans Console Javascript
+        if (response.getIntervenant) {
+            // // TODO: afficher les informations de l'élève
+            $('#nomIntervenant').html(response.utilisateur.prenom + " " + response.utilisateur.nom); // Message pour le paragraphe de notification
+        }
+        else {
+            $('#nomIntervenant').html("Jsp"); // Message pour le paragraphe de notification
+        }
+    })
+    .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+        console.log('Error',error); // LOG dans Console Javascript
+        alert("Erreur lors de l'appel AJAX");
+    });
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     afficherInformationsIntervenant();
-    afficherBoutonsMatieres();
 });
 
 $(document).ready( function () {

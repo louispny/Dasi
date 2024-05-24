@@ -9,6 +9,7 @@ package controller;
 import controller.sous_controller.AuthentifierIntervenantAction;
 import controller.sous_controller.AuthentifierEleveAction;
 import controller.sous_controller.DemanderInterventionAction;
+import controller.sous_controller.EnvoyerNoteAction;
 import controller.sous_controller.GetInfosEleve;
 import controller.sous_controller.GetInfosEleveIntervention;
 import controller.sous_controller.GetInfosIntervenant;

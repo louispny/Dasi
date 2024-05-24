@@ -22,10 +22,13 @@ public class EnvoyerNoteAction extends Action {
     public void executer(HttpServletRequest request) {
         System.out.println("Envoi de la note");
         int note = (int) request.getAttribute("note");
+        System.out.println("Note : " + note);
         HttpSession session = request.getSession(true);
         Long idInterv = (Long) session.getAttribute("intervention");
+        System.out.println("Id intervention : " + idInterv);
         Service service = new Service();
         Intervention intervention = service.findIntervention(idInterv);
+        System.out.println("Intervenant : " + intervention.getIntervenant());
         service.envoiNote(intervention, note);
 
     }

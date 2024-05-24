@@ -64,6 +64,25 @@ public class Service {
             Autre intervenant_3 = new Autre("messi", "lionel", 5, 1, "lm10@gmail.com", "mdplm10");
             intervenant_3.setActivite("Retraité");
             intervenantDao.creer(intervenant_3);
+            Enseignant enseignant1 = new Enseignant("Doe", "John", 5, 1, "john.doe@example.com", "password");
+            enseignant1.setType_etablissement("Collège");
+            intervenantDao.creer(enseignant1);
+
+            Enseignant enseignant2 = new Enseignant("Smith", "Jane", 4, 0, "jane.smith@example.com", "password");
+            enseignant2.setType_etablissement("Lycée");
+            intervenantDao.creer(enseignant2);
+
+            Enseignant enseignant3 = new Enseignant("Johnson", "Michael", 3, 2, "michael.johnson@example.com", "password");
+            enseignant3.setType_etablissement("Collège");
+            intervenantDao.creer(enseignant3);
+
+            Enseignant enseignant4 = new Enseignant("Williams", "Emily", 2, 1, "emily.williams@example.com", "password");
+            enseignant4.setType_etablissement("Lycée");
+            intervenantDao.creer(enseignant4);
+
+            Enseignant enseignant5 = new Enseignant("Brown", "David", 1, 0, "david.brown@example.com", "password");
+            enseignant5.setType_etablissement("Collège");
+            intervenantDao.creer(enseignant5);
             System.out.println("Création des intervenants dans la bd.");
 
             JpaUtil.validerTransaction();

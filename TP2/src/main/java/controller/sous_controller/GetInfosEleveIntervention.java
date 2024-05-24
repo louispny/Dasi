@@ -5,10 +5,18 @@
  */
 package controller.sous_controller;
 
+import javax.servlet.http.HttpServletRequest;
+import metier.modele.Intervention;
+
 /**
  *
  * @author ylaatar
  */
-public class GetInfosEleveIntervention {
+public class GetInfosEleveIntervention extends Action {
+    @Override
+    public void executer(HttpServletRequest request) {
+        HttpSession session = 
+        Intervention = (Intervention)session.getAttribute("intervention") ; 
+    }
     
 }

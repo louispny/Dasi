@@ -16,5 +16,5 @@ public class EtablissementDao {
         List<Etablissement> resultList = query.getResultList();
         return resultList.isEmpty() ? null : resultList.get(0);
     }
-
+    
 }

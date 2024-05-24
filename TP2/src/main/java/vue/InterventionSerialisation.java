@@ -29,25 +29,64 @@ public class InterventionSerialisation extends Serialisation{
         JsonObject container = new JsonObject() ;
         JsonObject jsonUser = new JsonObject() ; 
         Intervention intervention = (Intervention)request.getAttribute("intervention");
-        if (intervention.getDate_debut() != null)
-        {
-            container.addProperty("valide", true);
-            container.addProperty("redirectURL", "") ; 
-            jsonUser.addProperty("id", intervention.getId());
+        switch(request.getParameter("todo")) {
+            case "demandeIntervention" : {
+                
+                if (intervention.getDate_debut() != null)
+                {
+                    container.addProperty("valide", true);
+                    jsonUser.addProperty("id", intervention.getId());
+                }
+                else 
+                {
+                    container.addProperty("valide", false);
+
+                }
+                
+            }
+            case "getIntervention" : {
+                container.addProperty("valide", true) ; 
+                
+        String nom_etablissement = intervention.getEleve().getEtablissement().getNom() ; 
+        String prenom = intervention.getEleve().getPrenom() ; 
+        String nom = intervention.getEleve().getNom() ; 
+        String level = "Terminale" ; 
+        switch(intervention.getEleve().getNiveau()) {
+            case 1 : {
+                    level = "Premiere" ;
+                    break ;
+                }
+                case 2 : {
+                    level = "Seconde" ; 
+                    break ;
+                }
+                case 3 : {
+                    level = "Troisieme" ; 
+                    break ;
+                }
+                case 4 : {
+                    level = "Quatrieme" ; 
+                    break ;
+                }
+                case 5 : {
+                    level = "Cinquieme" ; 
+                    break ;
+                }
+                case 6 : {
+                    level = "Sixieme" ; 
+                    break ;
+                }
         }
-        else 
-        {
-            container.addProperty("valide", false);
-            
+            }
         }
         response.setContentType("application/json;charset=UTF-8");
-            PrintWriter out ;
-            try {
-                out = response.getWriter();
-                out.println(gson.toJson(container));
-                out.close();
-            } catch (IOException ex) {
-                Logger.getLogger(ProfilUtilisateurSerialisation.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        PrintWriter out ;
+        try {
+            out = response.getWriter();
+            out.println(gson.toJson(container));
+            out.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ProfilUtilisateurSerialisation.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -195,13 +195,30 @@ public class Service {
 
         e = eleveDao.findByID(id);
 
-        if (e == null) // mail faux
+        if (e == null) // id faux
         {
             System.out.println("Aucun compte associé à cet id : " + id);
         }
 
         JpaUtil.fermerContextePersistance();
         return e;
+    }
+    
+    public Intervenant findIntervenant(Long id) {
+        System.out.println("trace1");
+        IntervenantDao intervenantDao = new IntervenantDao() ; 
+        Intervenant i ; 
+        JpaUtil.creerContextePersistance();
+        System.out.println("trace2");
+        i = intervenantDao.findByID(id) ; 
+        System.out.println("trace3");
+        if (i == null) //id faux
+        {
+            System.out.println("Aucun compte associé à cet id : " + id) ; 
+        }
+        System.out.println("trace4");
+        JpaUtil.fermerContextePersistance();
+        return i ; 
     }
 
 

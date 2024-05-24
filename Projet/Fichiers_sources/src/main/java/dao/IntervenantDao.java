@@ -16,6 +16,13 @@ public class IntervenantDao {
         JpaUtil.obtenirContextePersistance().merge(intervenant); // maj de l'intervenant dans la BD
     }
 
+    public Intervenant findByID(Long para_id) {
+        TypedQuery<Intervenant> query = JpaUtil.obtenirContextePersistance().createQuery("SELECT i FROM Intervenant i WHERE i.id = :id", Intervenant.class);
+        query.setParameter("id", para_id);
+        List<Intervenant> resultList = query.getResultList();
+        return resultList.isEmpty() ? null : resultList.get(0);
+    }
+    
     public Intervenant findByMail(String para_mail) {
         TypedQuery<Intervenant> query = JpaUtil.obtenirContextePersistance().createQuery("SELECT i FROM Intervenant i WHERE i.mail = :mail", Intervenant.class);
         query.setParameter("mail", para_mail);

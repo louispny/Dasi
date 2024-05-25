@@ -1,117 +1,69 @@
+@charset "UTF-8";
+
+/* CSS Document */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+    background-color: #F4F6F9;
+    font: 1em "Jua", Arial, sans-serif;
+    color: #333;
     display: flex;
+    flex-direction: row;
+}
+
+#liste {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 45vw;
+    height: 90vh;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    font: 1em "Inter", Arial, sans-serif;
+} 
+
+#droite {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    gap: 50px;
+    width: 40vw;
+    flex-grow: 1;
 }
 
-.historique-container {
+#entete {
     display: flex;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-height: 80vh; /* Limite la hauteur totale du conteneur */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add this line to create space between child containers */
 }
 
-.historique-list {
-    padding: 20px;
-    width: 300px;
-    border-right: 1px solid #ddd;
-    overflow-y: auto; /* Permet de défiler verticalement */
-    max-height: 80vh; /* Limite la hauteur pour s'assurer qu'il soit scrollable */
+#entete img {
+    width: 150px;
+    height: 150px;
 }
 
-.historique-item {
-    background-color: #e9e9f3;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    cursor: pointer; /* Indique que l'élément est cliquable */
-}
-
-.historique-item .matiere {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.historique-item .details {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.historique-item .note {
-    margin-top: 5px;
-}
-
-.etoile, .etoile-vide {
-    color: gold;
-    font-size: 1.2em;
-}
-
-.etoile-vide {
-    color: #ccc;
-}
-
-.details-container {
-    padding: 20px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    max-height: 80vh; /* Limite la hauteur pour s'assurer qu'il soit scrollable */
-    overflow-y: auto; /* Permet de défiler verticalement si nécessaire */
-}
-
-.details-item {
-    background-color: #e9e9f3;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.details-item .matiere {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.details-item .note {
-    margin-bottom: 10px;
-}
-
-.details-item .details {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.bilan {
-    margin-top: 10px;
-    font-size: 0.9em;
+#entete h1 {
     color: #333;
 }
 
-.retour {
-    align-self: center;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+#detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    width: 35vw;
+    font: 1em "Inter", Arial, sans-serif;
+    padding: 20px;
+    /*visibility: hidden;*/
 }
 
-.retour:hover {
-    background-color: #0056b3;
+#ligne {
+    display: flex;
+    flex-direction: row;
 }

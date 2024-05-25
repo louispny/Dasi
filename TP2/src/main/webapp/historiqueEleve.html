@@ -1,207 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historique de Soutien</title>
     <link rel="stylesheet" href="historiqueEleve.css">
+    <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
 </head>
+
 <body>
-    <div class="historique-container">
-        <div class="historique-list">
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
+    <div id="liste" class="historiqueList">
+    </div>
+    <div id="droite">
+        <div id="entete">
+            <div id="logo">
+                <img src="images/logo.png" alt="logo">
             </div>
-            <div class="historique-item" id="item-1" data-matiere="Maths" data-intervenant="M. Moi" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Maths</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
+            <div id="nomEntete">
+                <h1>Instruct’If</h1>
             </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            <div class="historique-item" id="item-1" data-matiere="Histoire" data-intervenant="M. Napoléon" data-duree="1h30" data-note="3" data-bilan="Bilan du soutien">
-                <div class="matiere">Histoire</div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-            </div>
-            
-            <!-- Répéter les éléments de soutien ici -->
         </div>
-        <div class="details-container">
-            <div class="details-item">
+        <div id="detail" class="detailsContainer">
+            <div id="ligne">
                 <div class="matiere">Histoire</div>
-                <div class="note">
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile">★</span>
-                    <span class="etoile-vide">☆</span>
-                    <span class="etoile-vide">☆</span>
-                </div>
-                <div class="details">
-                    <div class="intervenant">M. Napoléon</div>
-                    <div class="duree">1h30</div>
-                </div>
-                <div class="bilan">
-                    <strong>BILAN</strong>
-                    <p>Bilan du soutien</p>
+                <div id="detailStars">
+                    <svg id="starn1" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="clic" id="star1"
+                            d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" />
+                        <path d="M0 0h24v24h-24z" fill="none" />
+                    </svg>
+                    <svg id="starn2" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="clic" id="star2"
+                            d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" />
+                        <path d="M0 0h24v24h-24z" fill="none" />
+                    </svg>
+                    <svg id="starn3" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="clic" id="star3"
+                            d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" />
+                        <path d="M0 0h24v24h-24z" fill="none" />
+                    </svg>
+                    <svg id="starn4" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="clic" id="star4"
+                            d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" />
+                        <path d="M0 0h24v24h-24z" fill="none" />
+                    </svg>
+                    <svg id="starn5" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="clic" id="star5"
+                            d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" />
+                        <path d="M0 0h24v24h-24z" fill="none" />
+                    </svg>
                 </div>
             </div>
-            <button class="retour">Retour</button>
+            <div id="intervenant">
+                <img src="images/profil.png" alt="profil">
+                <div id="intervenantNom">M. Napoléon</div>
+            </div>
+            <div id="duree">
+                <img src="images/horloge.png" alt="horloge">
+                <div class="duree">1h30</div>
+            </div>
+            <div id="bilan">
+                <p>Bilan</p>
+                <div id="explicationBilan">
+                    <p><span id="detailsBilan">Bilan du soutien</span></p>
+                </div>
+            </div>
         </div>
+        <button class="retour">Retour</button>
     </div>
     <script src="historiqueEleve.js"></script>
 </body>
+
 </html>

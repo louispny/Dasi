@@ -1,0 +1,197 @@
+body {
+    background-color: #F4F6F9;
+    font: 1em "Inter", Arial, sans-serif;
+    color: #333;
+}
+
+#entete {
+    font: 1em "Jua", Arial, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Add this line to create space between child containers */
+    margin: 20px auto; /* Add this line to center the form horizontally */
+}
+
+#entete img {
+    width: 100px;
+    height: 100px;
+}
+
+#nomEntete h1{
+    color: #333;
+    height: 100px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#logo {
+    margin-left: 5vw;
+}
+
+#nomEntete {
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.bouton2 {
+    background-color: #020E36;
+    font: 1em "Jua", Arial, sans-serif;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 30px; /* Add this line to create rounded corners */
+    cursor: pointer;
+}
+
+#infosIntervenant {
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    width: 50vw; /* Add this line to limit the width */
+    margin: 0 auto; /* Add this line to center the form horizontally */
+    display: flex;
+    flex-direction: row;
+    margin-right: 10vw; /* Add this line to set the distance from the right edge */
+    
+}
+
+#infosIntervenant img{
+    width: 85px;
+    height: 100px;
+    margin: 10px;
+}
+
+#info {
+    display: flex;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+h3 {
+    margin: 0;
+    font : 1.5em "Inter", Arial, sans-serif;
+    font-style: light;
+}
+
+#boutonModifier {
+    flex-grow: 1; /* Add this line to make the div take up the remaining available space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton1 {
+    background-color: #020E36;
+    font: 2em "Jua", Arial, sans-serif;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 30px; /* Add this line to create rounded corners */
+    cursor: pointer;
+}
+
+#accueilIntervenant {
+    padding: 20px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    max-width: 80vw; /* Add this line to limit the width */
+    margin: 0 auto; /* Add this line to center the form horizontally */
+    margin-right: 10vw; /* Add this line to set the distance from the right edge */
+    margin-left: 10vw; /* Add this line to set the distance from the left edge */
+    /*visibility: hidden;*/ 
+}
+
+#texteDemandeSoutien {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font: 2em "Inter", Arial, sans-serif;
+    font-style: bold;
+    color: #020E36;
+}
+
+#infoSoutien {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+
+.bouton3 {
+    background-color: #020E36;
+    font: 1.5em "Jua", Arial, sans-serif;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 30px; /* Add this line to create rounded corners */
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 80px;
+    margin-top: 20px;
+}
+
+#imageEtudiant img {
+    width: 100px;
+    height: 130px;
+    margin-right: 10px;
+}
+
+#infoEtudiant {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#infoEtudiant h3 {
+    flex-grow: 1;
+}
+
+#details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#details p {
+    font: 1em "Inter", Arial, sans-serif;
+    font-style: bold;
+    margin: 0;
+    margin-left: 10px;
+}
+
+#explicationDemande {
+    height: 150px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 7px;
+    border : 1px solid black;
+}
+
+#explicationDemande p {
+    margin: 10px;
+    font: 1em  "Inter", Arial, sans-serif;
+}
+
+#bouton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#boutonSoutien {
+    font: 2em "Jua", Arial, sans-serif;
+    padding-left:  120px;
+    padding-right: 120px;
+}

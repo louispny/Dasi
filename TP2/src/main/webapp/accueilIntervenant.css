@@ -106,7 +106,7 @@ h3 {
     margin: 0 auto; /* Add this line to center the form horizontally */
     margin-right: 10vw; /* Add this line to set the distance from the right edge */
     margin-left: 10vw; /* Add this line to set the distance from the left edge */
-    /*visibility: hidden;*/ 
+    /*display: none;*/
 }
 
 #texteDemandeSoutien {
@@ -194,4 +194,32 @@ h2 {
     font: 2em "Jua", Arial, sans-serif;
     padding-left:  120px;
     padding-right: 120px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#aucune demande {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.popup {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    max-width: 50vw; /* Add this line to limit the width */
+    margin: 20px auto; /* Add this line to center the form horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: none;
+}
+
+#aucuneDemande img {
+    width: 35vw;
+    height: 30vh;
 }

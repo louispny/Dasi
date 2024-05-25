@@ -55,7 +55,8 @@ function afficherInformationsIntervention() {
             $('#detailsDemande').html(response.intervention.details) ;
         }
         else {
-            $('#nomEleve').html("Jsp"); // Message pour le paragraphe de notification
+            $('#accueilIntervenant').css('display', 'none');
+            $('#aucuneDemande').css('display', 'block');
         }
     })
     .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX

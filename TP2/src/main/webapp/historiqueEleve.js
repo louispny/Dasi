@@ -1,10 +1,18 @@
+let nbInterventions = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
+    
+    importerHistorique() ;
+
     const historiqueItems = document.querySelectorAll('.historique-item');
     const detailsContainer = document.querySelector('.details-container .details-item');
     const retourButton = document.querySelector('.retour');
 
     historiqueItems.forEach(item => {
         item.addEventListener('click', () => {
+
+            $('#detail').css('visibility', 'visible');
+
             const matiere = item.getAttribute('data-matiere');
             const intervenant = item.getAttribute('data-intervenant');
             const duree = item.getAttribute('data-duree');
@@ -13,31 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Met à jour les détails
             detailsContainer.querySelector('.matiere').textContent = matiere;
-            detailsContainer.querySelector('.intervenant').textContent = intervenant;
-            detailsContainer.querySelector('.duree').textContent = duree;
-            detailsContainer.querySelector('.bilan p').textContent = bilan;
+            detailsContainer.querySelector('.intervenantClass').textContent = intervenant;
+            detailsContainer.querySelector('.dureeClass').textContent = duree;
+            detailsContainer.querySelector('.bilanClass').textContent = bilan;
 
             // Met à jour les étoiles
-            const noteContainer = detailsContainer.querySelector('.note');
-            noteContainer.innerHTML = '';
-            for (let i = 0; i < 5; i++) {
-                const star = document.createElement('span');
-                star.classList.add(i < note ? 'etoile' : 'etoile-vide');
-                star.textContent = i < note ? '★' : '☆';
-                noteContainer.appendChild(star);
+            for (let i = 1; i <= note; i++) {
+                $('#starn'+i).css('fill','#FFD700');
             }
         });
     });
-
-    retourButton.addEventListener('click', () => {
-        detailsContainer.querySelector('.matiere').textContent = '';
-        detailsContainer.querySelector('.intervenant').textContent = '';
-        detailsContainer.querySelector('.duree').textContent = '';
-        detailsContainer.querySelector('.bilan p').textContent = '';
-        detailsContainer.querySelector('.note').innerHTML = '';
-    });
 });
- function importerHistorique() {
+
+function importerHistorique() {
     // on récupére les informations de l'élève avec une requête AJAX
     // on récupére les informations de l'élève
     console.log("récupération de l'historique de l’élève"); // LOG dans Console Javascript
@@ -60,9 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
             // // TODO: afficher les informations de l'élève
             $('#nomEleve').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
             $('#classeEleve').html(response.eleve.classe); // Message pour le paragraphe de notification*/
+            let laMatiere = response.listeIntervention[nbInterventions].matiere;
+            let nomIntervenant = response.listeIntervention[nbInterventions].intervenantNom;
+            let prenomIntervenant = response.listeIntervention[nbInterventions].intervenantPrenom;
+            let laDuree = response.listeIntervention[nbInterventions].duree;
+            let laNote = response.listeIntervention[nbInterventions].note;
+            let leBilan = response.listeIntervention[nbInterventions].bilan;
+            $('#liste').append('<div id="item' + nbInterventions + '" class="historique-item" data-matiere="' + laMatiere + '" data-intervenant="' + prenomIntervenant + " " + nomIntervenant + '" data-duree="' + laDuree + '" data-note="' + laNote + '" data-bilan="' + leBilan + '"></div>');
+            $('#item' + nbIntervention).append('< div class="ligne" id="ligne' + nbIntervention + '"></div>');
+            $('#ligne' + nbIntervention).append('<div class="matiereDiv">' + laMatiere + '</div>');
+            $('#ligne' + nbIntervention).append('<div id="stars' + nbIntervention + '" class="stars"></div>');
+            for (let i = 1; i <= 5; i++) {
+                $('#stars' + nbIntervention).append('<svg id="starn' + i + '.' + nbIntervention + '" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clic" id="star' + i + '.' + nbIntervention + '" d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" /><path d="M0 0h24v24h-24z" fill="none" /></svg>');
+            }
+            $('#item' + nbIntervention).append('<div class="intervenantDiv" id="intervenant' + nbIntervention + '"></div>');
+            $('#intervenant' + nbIntervention).append(<img src="images/profil.png" alt="profil" class="teacher" />);
+            $('#intervenant' + nbIntervention).append('<div class="intervenantDenom">' + prenomIntervenant + " " + nomIntervenant + '</div>');
+            $('#item' + nbIntervention).append('<div class="dureeDiv" id="duree' + nbIntervention + '"></div>');
+            $('#duree' + nbIntervention).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
+            $('#duree' + nbIntervention).append('<div class="duree">' + laDuree + '</div>');
         }
         else {
-            $('#nomEleve').html("Jsp"); // Message pour le paragraphe de notification
+            //$('#nomEleve').html("Jsp"); // Message pour le paragraphe de notification
         }
     })
     .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX

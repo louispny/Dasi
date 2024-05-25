@@ -29,6 +29,7 @@ public class InterventionSerialisation extends Serialisation{
         JsonObject container = new JsonObject() ;
         JsonObject jsonUser = new JsonObject() ; 
         Intervention intervention = (Intervention)request.getAttribute("intervention");
+        System.out.println("intervention : " + intervention);
         switch(request.getParameter("todo")) {
             case "demandeIntervention" : {
                 

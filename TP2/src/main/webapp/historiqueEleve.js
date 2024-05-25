@@ -70,7 +70,7 @@ function importerHistorique() {
                 $('#stars' + nbInterventions).append('<svg id="starn' + i + '.' + nbInterventions + '" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clic" id="star' + i + '.' + nbInterventions + '" d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" /><path d="M0 0h24v24h-24z" fill="none" /></svg>');
             }
             $('#item' + nbInterventions).append('<div class="intervenantDiv" id="intervenant' + nbInterventions + '"></div>');
-            $('#intervenant' + nbInterventions).append('img src="images/profil.png" alt="profil" class="teacher" />');
+            $('#intervenant' + nbInterventions).append('<img src="images/profil.png" alt="profil" class="teacher" />');
             $('#intervenant' + nbInterventions).append('<div class="intervenantDenom">' + prenomIntervenant + " " + nomIntervenant + '</div>');
             $('#item' + nbInterventions).append('<div class="dureeDiv" id="duree' + nbInterventions + '"></div>');
             $('#duree' + nbInterventions).append('<img src="images/horloge.png" alt="horloge" class="clock" />');

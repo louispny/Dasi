@@ -46,6 +46,6 @@ public class IntervenantDao {
         TypedQuery<Intervention> query = JpaUtil.obtenirContextePersistance().createQuery(
                 "SELECT i FROM Intervention i WHERE i.intervenant = :intervenant AND i.date_fin = NULL AND i.date_debut = (SELECT MAX(i2.date_debut) FROM Intervention i2 WHERE i2.intervenant = :intervenant)", Intervention.class); // requete JPQL et type attendu
         query.setParameter("intervenant", intervenant); // on donne une valeur à notre attribut de selection
-        return query.getSingleResult();
+        return query.getResultList().isEmpty() ? null : query.getResultList().get(0); // on retourne le resultat de la requete
     }
 }

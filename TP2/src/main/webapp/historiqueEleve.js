@@ -63,7 +63,7 @@ function importerHistorique() {
             let laNote = response.listeIntervention[nbInterventions].note;
             let leBilan = response.listeIntervention[nbInterventions].bilan;
             $('#liste').append('<div id="item' + nbInterventions + '" class="historique-item" data-matiere="' + laMatiere + '" data-intervenant="' + prenomIntervenant + " " + nomIntervenant + '" data-duree="' + laDuree + '" data-note="' + laNote + '" data-bilan="' + leBilan + '"></div>');
-            $('#item' + nbInterventions).append('< div class="ligne" id="ligne' + nbInterventions + '"></div>');
+            $('#item' + nbInterventions).append('<div class="ligne" id="ligne' + nbInterventions + '"></div>');
             $('#ligne' + nbInterventions).append('<div class="matiereDiv">' + laMatiere + '</div>');
             $('#ligne' + nbInterventions).append('<div id="stars' + nbInterventions + '" class="stars"></div>');
             for (let i = 1; i <= 5; i++) {

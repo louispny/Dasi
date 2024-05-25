@@ -11,6 +11,7 @@ import controller.sous_controller.AuthentifierEleveAction;
 import controller.sous_controller.DemanderInterventionAction;
 import controller.sous_controller.EnvoyerBilanAction;
 import controller.sous_controller.EnvoyerNoteAction;
+import controller.sous_controller.GetHistoriqueEleveAction;
 import controller.sous_controller.GetInfosEleve;
 import controller.sous_controller.GetInfosEleveIntervention;
 import controller.sous_controller.GetInfosIntervenant;
@@ -32,6 +33,7 @@ import metier.modele.Eleve;
 import metier.modele.Intervenant;
 import vue.EnvoiBilanSerialisation;
 import vue.EnvoiNoteSerialisation;
+import vue.HistoriqueEleveSerialisation;
 import vue.InterventionSerialisation;
 import vue.MatieresSerialisation;
 import vue.ProfilEleveSerialisation;
@@ -148,6 +150,10 @@ public class ActionServlet extends HttpServlet {
                     new EnvoyerBilanAction().executer(request) ; 
                     new EnvoiBilanSerialisation().appliquer(request, response) ; 
                     break;
+                }
+                case "getHistoriqueEleve" : {
+                    new GetHistoriqueEleveAction().executer(request) ; 
+                    new HistoriqueEleveSerialisation().appliquer(request, response) ; 
                 }
             }
             

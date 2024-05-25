@@ -146,4 +146,9 @@ $(document).ready( function () {
         window.location.href = "index.html" ;
     });
 });
-        
+$(document).ready( function () {
+    $('#boutonHisto').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        window.location.href = "historiqueEleve.html";
+    });
+});
+            

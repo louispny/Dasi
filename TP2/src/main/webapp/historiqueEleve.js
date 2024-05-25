@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         var historiqueDiv = $('#historique-list');
         historiqueDiv.empty() ; 
         if (response.valide) {
-            var interventionHtml = '<div class="intervention-item" id="item-1"' +
+            /*var interventionHtml = '<div class="intervention-item" id="item-1"' +
             // // TODO: afficher les informations de l'élève
             $('#nomEleve').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
-            $('#classeEleve').html(response.eleve.classe); // Message pour le paragraphe de notification
+            $('#classeEleve').html(response.eleve.classe); // Message pour le paragraphe de notification*/
         }
         else {
             $('#nomEleve').html("Jsp"); // Message pour le paragraphe de notification
@@ -70,3 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Erreur lors de l'appel AJAX");
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    importerHistorique() ; 
+});

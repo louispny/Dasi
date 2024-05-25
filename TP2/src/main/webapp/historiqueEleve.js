@@ -63,18 +63,18 @@ function importerHistorique() {
             let laNote = response.listeIntervention[nbInterventions].note;
             let leBilan = response.listeIntervention[nbInterventions].bilan;
             $('#liste').append('<div id="item' + nbInterventions + '" class="historique-item" data-matiere="' + laMatiere + '" data-intervenant="' + prenomIntervenant + " " + nomIntervenant + '" data-duree="' + laDuree + '" data-note="' + laNote + '" data-bilan="' + leBilan + '"></div>');
-            $('#item' + nbIntervention).append('< div class="ligne" id="ligne' + nbIntervention + '"></div>');
-            $('#ligne' + nbIntervention).append('<div class="matiereDiv">' + laMatiere + '</div>');
-            $('#ligne' + nbIntervention).append('<div id="stars' + nbIntervention + '" class="stars"></div>');
+            $('#item' + nbInterventions).append('< div class="ligne" id="ligne' + nbInterventions + '"></div>');
+            $('#ligne' + nbInterventions).append('<div class="matiereDiv">' + laMatiere + '</div>');
+            $('#ligne' + nbInterventions).append('<div id="stars' + nbInterventions + '" class="stars"></div>');
             for (let i = 1; i <= 5; i++) {
-                $('#stars' + nbIntervention).append('<svg id="starn' + i + '.' + nbIntervention + '" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clic" id="star' + i + '.' + nbIntervention + '" d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" /><path d="M0 0h24v24h-24z" fill="none" /></svg>');
+                $('#stars' + nbInterventions).append('<svg id="starn' + i + '.' + nbInterventions + '" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clic" id="star' + i + '.' + nbInterventions + '" d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" /><path d="M0 0h24v24h-24z" fill="none" /></svg>');
             }
-            $('#item' + nbIntervention).append('<div class="intervenantDiv" id="intervenant' + nbIntervention + '"></div>');
-            $('#intervenant' + nbIntervention).append('img src="images/profil.png" alt="profil" class="teacher" />');
-            $('#intervenant' + nbIntervention).append('<div class="intervenantDenom">' + prenomIntervenant + " " + nomIntervenant + '</div>');
-            $('#item' + nbIntervention).append('<div class="dureeDiv" id="duree' + nbIntervention + '"></div>');
-            $('#duree' + nbIntervention).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
-            $('#duree' + nbIntervention).append('<div class="duree">' + laDuree + '</div>');
+            $('#item' + nbInterventions).append('<div class="intervenantDiv" id="intervenant' + nbInterventions + '"></div>');
+            $('#intervenant' + nbInterventions).append('img src="images/profil.png" alt="profil" class="teacher" />');
+            $('#intervenant' + nbInterventions).append('<div class="intervenantDenom">' + prenomIntervenant + " " + nomIntervenant + '</div>');
+            $('#item' + nbInterventions).append('<div class="dureeDiv" id="duree' + nbInterventions + '"></div>');
+            $('#duree' + nbInterventions).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
+            $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');
         }
         else {
             //$('#nomEleve').html("Jsp"); // Message pour le paragraphe de notification

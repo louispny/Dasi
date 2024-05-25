@@ -21,6 +21,7 @@ public class GetInfosEleveIntervention extends Action {
             
         HttpSession session = request.getSession(true);
         Service service = new Service() ; 
+        System.out.println("AHHHHHHHHHHHH");
         Intervention intervention = service.getInterventionEnCours(service.findIntervenant((Long)session.getAttribute("id"))) ;
         System.out.println("intervention : " + intervention);
         request.setAttribute("intervention", intervention) ;  

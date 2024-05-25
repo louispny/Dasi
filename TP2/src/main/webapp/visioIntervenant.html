@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Visio Intervenant</title>
+        <link rel="stylesheet" href="visioIntervenant.css">
+        <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <div id="entete">
+            <div id="logo">
+                <img src="images/logo.png" alt="logo">
+            </div>
+            <div id="nomEntete">
+                <h1>Instruct’If</h1>
+            </div>
+        </div>
+        <div id="conteneur">
+            <div id="visio">
+                <img src="images/visioIntervenant.png" alt="visio">
+            </div>
+        </div>
+        <div id="placeBoutonFin">
+            <button id="boutonFin">Quitter la visioconférence</button>
+        </div>
+        <div id="popupFin" class="popup">
+            <h3>La visioconférence est terminée</h3>
+            <p>Veuillez renseigner un bilan du soutien pour aider l'élève lors de ses révisions</p>
+            <div id="explication">
+                    <p>Bilan</p>
+                    <textarea id="bilanSoutien" name="bilanSoutien" placeholder="Veuillez décrire brièvement comment s'est passé la séance." ></textarea>
+            </div>
+            <div id="pourContinuer">
+                <button id="boutonContinuer" class="bouton2">Continuer</button>
+            </div>
+        </div>
+        <script src="visioIntervenant.js"></script>
+    </body>

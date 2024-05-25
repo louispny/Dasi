@@ -23,6 +23,10 @@ public class GetInfosEleveIntervention extends Action {
         Service service = new Service() ; 
         Intervention intervention = service.getInterventionEnCours(service.findIntervenant((Long)session.getAttribute("id"))) ;
         System.out.println("intervention : " + intervention);
+        if (intervention != null)
+        {
+            session.setAttribute("intervention", intervention.getId());
+        }
         request.setAttribute("intervention", intervention) ;  
     }
     

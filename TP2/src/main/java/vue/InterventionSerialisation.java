@@ -82,6 +82,7 @@ public class InterventionSerialisation extends Serialisation{
                     }
                     jsonUser.addProperty("classe", level) ;
                     jsonUser.addProperty("matiere", intervention.getMatiere().getNom());
+                    jsonUser.addProperty("details", intervention.getDetail()) ; 
                 }
                 
             }

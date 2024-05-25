@@ -52,6 +52,7 @@ function afficherInformationsIntervention() {
             $('#nomEtablissement').html(response.intervention.etablissement) ; 
             $('#niveauScolaire').html(response.intervention.classe) ; 
             $('#matiereEnseignee').html(response.intervention.matiere) ;
+            $('#detailsDemande').html(response.intervention.details) ;
         }
         else {
             $('#nomEleve').html("Jsp"); // Message pour le paragraphe de notification
@@ -72,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 $(document).ready( function () {
-    $('#boutonVisio').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
-        window.location.href = "visioEleve.html";
+    $('#boutonSoutien').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        window.location.href = "visioIntervenant.html";
     });
 });
         

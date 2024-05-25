@@ -9,6 +9,7 @@ package controller;
 import controller.sous_controller.AuthentifierIntervenantAction;
 import controller.sous_controller.AuthentifierEleveAction;
 import controller.sous_controller.DemanderInterventionAction;
+import controller.sous_controller.EnvoyerBilanAction;
 import controller.sous_controller.EnvoyerNoteAction;
 import controller.sous_controller.GetInfosEleve;
 import controller.sous_controller.GetInfosEleveIntervention;
@@ -29,6 +30,7 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 import metier.modele.Eleve;
 import metier.modele.Intervenant;
+import vue.EnvoiBilanSerialisation;
 import vue.EnvoiNoteSerialisation;
 import vue.InterventionSerialisation;
 import vue.MatieresSerialisation;
@@ -140,6 +142,11 @@ public class ActionServlet extends HttpServlet {
                 case "envoiNote" : {
                     new EnvoyerNoteAction().executer(request) ; 
                     new EnvoiNoteSerialisation().appliquer(request, response);
+                    break;
+                }
+                case "envoiBilan" : {
+                    new EnvoyerBilanAction().executer(request) ; 
+                    new EnvoiBilanSerialisation().appliquer(request, response) ; 
                     break;
                 }
             }

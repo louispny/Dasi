@@ -32,7 +32,7 @@ public class InterventionSerialisation extends Serialisation{
         switch(request.getParameter("todo")) {
             case "demandeIntervention" : {
                 
-                if (intervention.getDate_debut() != null)
+                if (intervention != null)
                 {
                     container.addProperty("valide", true);
                     jsonUser.addProperty("id", intervention.getId());

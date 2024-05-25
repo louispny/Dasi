@@ -154,6 +154,7 @@ public class ActionServlet extends HttpServlet {
                 case "getHistoriqueEleve" : {
                     new GetHistoriqueEleveAction().executer(request) ; 
                     new HistoriqueEleveSerialisation().appliquer(request, response) ; 
+                    break; 
                 }
             }
             

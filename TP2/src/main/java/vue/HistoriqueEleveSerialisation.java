@@ -34,14 +34,16 @@ public class HistoriqueEleveSerialisation extends Serialisation {
         {
             for (Intervention intervention : liste)
             {
-                JsonObject jsonIntervention = new JsonObject();
-                jsonIntervention.addProperty("intervenantNom", intervention.getIntervenant().getNom());
-                jsonIntervention.addProperty("intervenantPrenom", intervention.getIntervenant().getPrenom());
-                jsonIntervention.addProperty("matiere", intervention.getMatiere().getNom());
-                jsonIntervention.addProperty("duree", intervention.getDuree_en_minutes());
-                jsonIntervention.addProperty("note", intervention.getNote());
-                jsonIntervention.addProperty("bilan", intervention.getBilan());
-                interventionList.add(jsonIntervention);
+                if (intervention.getDate_fin()!= null){
+                    JsonObject jsonIntervention = new JsonObject();
+                    jsonIntervention.addProperty("intervenantNom", intervention.getIntervenant().getNom());
+                    jsonIntervention.addProperty("intervenantPrenom", intervention.getIntervenant().getPrenom());
+                    jsonIntervention.addProperty("matiere", intervention.getMatiere().getNom());
+                    jsonIntervention.addProperty("duree", intervention.getDuree_en_minutes());
+                    jsonIntervention.addProperty("note", intervention.getNote());
+                    jsonIntervention.addProperty("bilan", intervention.getBilan());
+                    interventionList.add(jsonIntervention);
+                }
             }
             container.add("listeIntervention", interventionList);
             container.addProperty("valide", true);

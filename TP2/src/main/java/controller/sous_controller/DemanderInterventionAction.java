@@ -20,13 +20,15 @@ public class DemanderInterventionAction extends Action {
     public void executer(HttpServletRequest request){
         Service service = new Service() ; 
         Eleve eleve = (Eleve)request.getAttribute("eleve") ; 
-        Intervention intervention = service.creerIntervention(request.getParameter("matiere"), eleve, request.getParameter("detail")) ; 
-        if (intervention != null) {
+        Intervention intervention = service.creerIntervention(request.getParameter("matiere"), eleve, request.getParameter("detail")) ;
+        if (intervention.getDate_debut() != null) {
+            System.out.println("on est la frero") ; 
             HttpSession session = request.getSession(true);
             session.setAttribute("intervention", intervention.getId());
             request.setAttribute("intervention", intervention);
         }
         else {
+            System.out.println("on est pas la frero") ;             
             request.setAttribute("intervention", null);
         }
     }

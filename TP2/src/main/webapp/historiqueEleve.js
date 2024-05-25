@@ -85,7 +85,3 @@ function importerHistorique() {
         alert("Erreur lors de l'appel AJAX");
     });
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    importerHistorique() ; 
-});

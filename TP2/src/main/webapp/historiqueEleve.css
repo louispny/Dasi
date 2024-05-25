@@ -49,7 +49,7 @@ body {
     color: #333;
 }
 
-#detail {
+.box {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -62,13 +62,13 @@ body {
     /*visibility: hidden;*/
 }
 
-#ligne {
+.ligne {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
-.matiere {
+.matiereDiv {
     font: 1.5em "Jua", Arial, sans-serif;
     color: white;
     background-color: #020E36;
@@ -79,7 +79,7 @@ body {
     height: fit-content;
 }
 
-#detailStars {
+.starsDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,23 +91,30 @@ svg {
     fill: gray;
 }
 
-#detail img {
-    width: 65px;
-    height: 65px;
-}
-
-.avecImage {
+.intervenantDiv {
     display: flex;
     flex-direction: row;
     gap: 10px;
     align-items: center;
 }
 
-#intervenant img {
+.intervenantDiv img {
     width: 50px;
     height: 65px;
     margin-left: 7px;
     margin-right: 7px;
+}
+
+.dureeDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.dureeDiv img {
+    width: 65px;
+    height: 65px;
 }
 
 #titre {

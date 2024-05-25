@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.historique-container {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-height: 80vh; /* Limite la hauteur totale du conteneur */
+}
+
+.historique-list {
+    padding: 20px;
+    width: 300px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* Permet de défiler verticalement */
+    max-height: 80vh; /* Limite la hauteur pour s'assurer qu'il soit scrollable */
+}
+
+.historique-item {
+    background-color: #e9e9f3;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer; /* Indique que l'élément est cliquable */
+}
+
+.historique-item .matiere {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.historique-item .details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.historique-item .note {
+    margin-top: 5px;
+}
+
+.etoile, .etoile-vide {
+    color: gold;
+    font-size: 1.2em;
+}
+
+.etoile-vide {
+    color: #ccc;
+}
+
+.details-container {
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh; /* Limite la hauteur pour s'assurer qu'il soit scrollable */
+    overflow-y: auto; /* Permet de défiler verticalement si nécessaire */
+}
+
+.details-item {
+    background-color: #e9e9f3;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.details-item .matiere {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.details-item .note {
+    margin-bottom: 10px;
+}
+
+.details-item .details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.bilan {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.retour {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.retour:hover {
+    background-color: #0056b3;
+}

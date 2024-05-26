@@ -55,7 +55,7 @@ function importerHistorique() {
                 $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');
                 nbInterventions++;
             }
-            $('#historique-list').html("Hstorique de soutien (" + nbInterventions + ")"); // Message pour le paragraphe de notification
+            $('#titreHistorique').html("Hstorique de soutien (" + nbInterventions + ")"); // Message pour le paragraphe de notification
 
             const historiqueItems = document.querySelectorAll('.historique-item');
 

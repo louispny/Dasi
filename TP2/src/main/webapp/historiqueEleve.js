@@ -55,7 +55,7 @@ function importerHistorique() {
                 $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');
                 nbInterventions++;
             }
-            $('#titreHistorique').html("Hstorique de soutien (" + nbInterventions + ")"); // Message pour le paragraphe de notification
+            $('#titreHistorique').html("Historique des soutiens (" + nbInterventions + ")"); // Message pour le paragraphe de notification
 
             const historiqueItems = document.querySelectorAll('.historique-item');
 
@@ -100,3 +100,8 @@ function importerHistorique() {
         alert("Erreur lors de l'appel AJAX");
     });
 }
+
+//bouton retour
+$('#retour').on('click', () => {
+    window.location.href = 'accueilEleve.html';
+});

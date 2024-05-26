@@ -13,7 +13,7 @@ body {
     margin: 30px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     width: 45vw;
     height: 90vh;
     background-color: #ffffff;
@@ -65,9 +65,9 @@ body {
 .historique-item {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
     background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     border-radius: 10px; /* Add this line to create rounded corners */
     width: 35vw;
     font: 1em "Inter", Arial, sans-serif;

@@ -48,8 +48,8 @@ function importerHistorique() {
                     }
                 }
                 $('#item' + nbInterventions).append('<div class="eleveDiv" id="eleve' + nbInterventions + '"></div>');
-                $('#intervenant' + nbInterventions).append('<img src="images/etudiant.png" alt="profil" class="student" />');
-                $('#intervenant' + nbInterventions).append('<div class="eleveDenom">' + prenomEleve + " " + nomEleve + '</div>');
+                $('#eleve' + nbInterventions).append('<img src="images/etudiant.png" alt="profil" class="student" />');
+                $('#eleve' + nbInterventions).append('<div class="eleveDenom">' + prenomEleve + " " + nomEleve + '</div>');
                 $('#item' + nbInterventions).append('<div class="dureeDiv" id="duree' + nbInterventions + '"></div>');
                 $('#duree' + nbInterventions).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
                 $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');

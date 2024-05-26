@@ -21,9 +21,10 @@ public class DureeSoutienNiveauAction extends Action{
         HttpSession session = request.getSession(true) ;
         Service service = new Service() ; 
         Intervenant intervenant = service.findIntervenant((Long)session.getAttribute("id")) ;
-        HashMap<String, Long> stats = service.obtenirMinutesDeCoursParMatiere(intervenant) ;
-        System.out.println("la hashmap : " + stats) ; 
-        request.setAttribute("DureeSoutienNiveau", stats);
-        
+        HashMap<Integer, Long> stats2 = service.obtenirMinutesDeCoursParNiveau(intervenant) ;
+        HashMap<String, Long> stats = service.obtenirMinutesDeCoursParMatiere(intervenant) ; 
+        request.setAttribute("DureeSoutienMatiere", stats);
+        request.setAttribute("DureeSoutienNiveau", stats2);
+
     }
 }

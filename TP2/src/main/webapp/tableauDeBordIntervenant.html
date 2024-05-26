@@ -19,99 +19,11 @@
         <h1>Démonstrat'IF &ndash; Graphiques HighCharts</h1>
         <div id="container-1" class="highcharts-container"></div>
         <div id="container-2" class="highcharts-container"></div>
-        <div id="container-3" class="highcharts-container"></div>
-        <div id="container-4" class="highcharts-container"></div>
-        <div id="container-5" class="highcharts-container"></div>  
         <button id ="historique">Historique</button> 
         <script src="tableauDeBordIntervenant.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script type="text/javascript">
-
-            var lineChartData = {
-                labels: ['Sept.', 'Oct.', 'Nov.', 'Dec.', 'Janv.', 'Févr.', 'Mars', 'Avril.', 'Mai', 'Juin'],
-                data: [23, 19, 15, 12, 5, -2, 10, 18, 23, 25]
-            };
-
-            buildLineChart('container-1', lineChartData);
-            buildBarChart('container-3', lineChartData);
-
-            var multiLineChartData = {
-                labels: ['CM', 'TD', 'TP'],
-                data: [
-                    {
-                        name: 'Lucie',
-                        data: [16, 23, 60]
-                    },
-                    {
-                        name: 'Marcel',
-                        data: [12, 34, 52]
-                    },
-                    {
-                        name: 'Noémie',
-                        data: [49, 48, 40]
-                    },
-                    {
-                        name: 'Oscar',
-                        data: [30, 60, 21]
-                    }]
-            };
-
-            buildMultiLineChart('container-2', multiLineChartData);
-            buildMultiBarChart('container-4', multiLineChartData);
-
-            var proportionChartData = {
-                label: 'Temps de Parole (min)',
-                data: [
-                    {
-                        name: 'Lucie',
-                        y: 20
-                    },
-                    {
-                        name: 'Marcel',
-                        y: 5
-                    },
-                    {
-                        name: 'Noémie',
-                        y: 7
-                    },
-                    {
-                        name: 'Oscar',
-                        y: 13
-                    }]
-            };
-
-            buildPieChart('container-5', proportionChartData);
-
-            function buildLineChart(container, graphData) {
-
-                Highcharts.chart(container, {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'Température en Amphi'
-                    },
-                    subtitle: {
-                        text: 'Source: a priori'
-                    },
-                    xAxis: {
-                        categories: graphData.labels
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Température (°C)'
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: [{name: 'Données', data: graphData.data}]
-                });
-            }
-
+            
             function buildBarChart(container, graphData) {
 
                 Highcharts.chart(container, {
@@ -142,63 +54,6 @@
                     series: [{name: 'Données', data: graphData.data}]
                 });
             }
-
-            function buildMultiLineChart(container, graphData) {
-
-                Highcharts.chart(container, {
-
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'Motivation par Type de Créneau'
-                    },
-                    subtitle: {
-                        text: 'Source: a priori'
-                    },
-                    xAxis: {
-                        categories: graphData.labels
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Motivation (%)'
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: graphData.data
-                });
-            }
-
-            function buildMultiBarChart(container, graphData) {
-
-                Highcharts.chart(container, {
-
-                    chart: {
-                        type: 'column'
-                    },
-                    title: {
-                        text: 'Motivation par Type de Créneau'
-                    },
-                    subtitle: {
-                        text: 'Source: a priori'
-                    },
-                    xAxis: {
-                        categories: graphData.labels
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Motivation (%)'
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: graphData.data
-                });
-            }
-
             function buildPieChart(container, graphData) {
 
                 Highcharts.chart(container, {
@@ -207,10 +62,10 @@
                         type: 'pie'
                     },
                     title: {
-                        text: 'Temps de Parole pendant la Soutenance de Projet'
+                        text: "Nombre d'heures de cours données ce mois-ci"
                     },
                     subtitle: {
-                        text: 'Temps de Parole (min) - Source: a priori'
+                        text: 'Temps en heure - Source : le back-end'
                     },
                     credits: {
                         enabled: false

@@ -30,16 +30,52 @@ public class DureeSoutienNiveauSerialisation extends Serialisation {
         System.out.println("serialisation :");
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create(); 
         JsonObject container = new JsonObject() ;
-        JsonArray classes = new JsonArray() ; 
+        JsonArray matieres = new JsonArray() ; 
         JsonArray data = new JsonArray() ;
-        HashMap<String, Long> map = (HashMap<String, Long>)request.getAttribute("DureeSoutienNiveau") ; 
-        if (map != null) {
+        JsonArray niveau = new JsonArray() ; 
+        JsonArray donnees = new JsonArray() ;
+        HashMap<Integer, Long> map2 = (HashMap<Integer, Long>)request.getAttribute("DureeSoutienNiveau") ;
+        HashMap<String, Long> map = (HashMap<String, Long>)request.getAttribute("DureeSoutienMatiere") ; 
+        if (map != null && map2 != null) {
             for (Map.Entry<String, Long> entry : map.entrySet()) {
-                classes.add(entry.getKey());
+                matieres.add(entry.getKey());
                 data.add(entry.getValue());
             } 
-            container.add("ClasseSoutienNiveau", classes) ; 
-            container.add("DureeSoutienNiveau", data) ;
+            String lvl = "Terminale" ; 
+            for (Map.Entry<Integer, Long> entry : map2.entrySet()) {
+                switch(entry.getKey()) {
+                    case 1 : {
+                        lvl = "Première" ; 
+                        break ; 
+                    }
+                    case 2 : {
+                        lvl = "Seconde" ;
+                        break ; 
+                    }
+                    case 3 : {
+                        lvl = "Troisieme" ;
+                        break ; 
+                    }
+                    case 4 : {
+                        lvl = "Quatrieme" ;
+                        break ; 
+                    }
+                    case 5 : {
+                        lvl = "Cinquieme" ; 
+                        break ; 
+                    }
+                    case 6 : {
+                        lvl = "Sixieme" ; 
+                        break ;
+                    }
+                }
+                niveau.add(lvl);
+                donnees.add(entry.getValue());
+            } 
+            container.add("ClasseSoutienMatiere", matieres) ; 
+            container.add("DureeSoutienMatiere", data) ;
+            container.add("DureeSoutienNiveau", donnees) ; 
+            container.add("ClasseSoutienNiveau", niveau) ;
             container.addProperty("valide", true); 
         }
         else {

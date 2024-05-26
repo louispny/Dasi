@@ -28,7 +28,22 @@ function chargerStats1() {
             // // TODO: afficher les informations de l'élève
             // $('#nomIntervenant').html(response.utilisateur.prenom + " " + response.utilisateur.nom); // Message pour le paragraphe de notification
             
+            const filteredIndices = response.DureeSoutienNiveau.map((value, index) => (value !== 0 ? index : -1)).filter(index => index !== -1);
+            var lineChartData = {
+                labels: filteredIndices.map(index => response.ClasseSoutienNiveau[index]),
+                data: filteredIndices.map(index => response.DureeSoutienNiveau[index])
+            };
+            const combinedArray = response.ClasseSoutienMatiere.map((name, index) => {
+                return {
+                    name: name,
+                    y: response.DureeSoutienMatiere[index]/60
+                };
+              
+            }).filter(item => item.y !== 0);
+            var proportionData = {label : "Nombre d'heures de cours données ce mois-ci" , data : combinedArray}
             buildBarChart('container-1', lineChartData);
+            buildPieChart('container-2', proportionData) ; 
+            console.log(combinedArray) ; 
         }
         else {
             // $('#nomIntervenant').html("Jsp"); // Message pour le paragraphe de notification
@@ -40,36 +55,6 @@ function chargerStats1() {
     });
 }
 
-function buildBarChart(container, graphData) {
-
-                Highcharts.chart(container, {
-
-                    chart: {
-                        type: 'column'
-                    },
-                    title: {
-                        text: 'Température en Amphi'
-                    },
-                    subtitle: {
-                        text: 'Source: a priori'
-                    },
-                    xAxis: {
-                        categories: graphData.labels
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Température (°C)'
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: [{name: 'Données', data: graphData.data}]
-                });
-}
 $(document).ready( function () {
     $('#historique').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
         window.location.href = "historiqueIntervenant.html" ;

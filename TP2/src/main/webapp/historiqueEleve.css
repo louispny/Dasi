@@ -144,7 +144,7 @@ svg {
     margin: 0;
     padding: 5px;
     height: 100px;
-    overflow: auto;
+    overflow-y: auto;
     border: black 1px solid;
     border-radius: 5px;
 }

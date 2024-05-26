@@ -32,8 +32,10 @@ body {
     margin-top: 20px;
 }
 
-.highcharts-container {
+.highcharts-contain {
     margin: 50px;
+    padding: 30px;
+    padding-top: 0;
     flex: 1;
     background-color: white;
     border-radius: 40px; /* Add this line to create rounded corners */

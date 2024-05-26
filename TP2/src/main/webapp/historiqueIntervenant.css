@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/* CSS Document */
+body {
+    background-color: #F4F6F9;
+    font: 1em "Jua", Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+}
+
+#liste {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 45vw;
+    height: 90vh;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    font: 1em "Inter", Arial, sans-serif;
+} 
+
+#droite {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 40vw;
+    flex-grow: 1;
+}
+
+#entete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add this line to create space between child containers */
+}
+
+#entete img {
+    width: 150px;
+    height: 150px;
+}
+
+#entete h1 {
+    color: #333;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    width: 35vw;
+    font: 1em "Inter", Arial, sans-serif;
+    padding: 20px;
+    visibility: hidden;
+}
+
+.historique-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border-radius: 10px; /* Add this line to create rounded corners */
+    width: 35vw;
+    font: 1em "Inter", Arial, sans-serif;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.ligne {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.matiereDiv {
+    font: 1.5em "Jua", Arial, sans-serif;
+    color: white;
+    background-color: #020E36;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px; /* Add this line to create rounded borders for inputs */
+    height: fit-content;
+}
+
+.starsDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+svg {
+    height: 40px;
+    fill: gray;
+}
+
+.eleveDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.eleveDiv img {
+    width: 50px;
+    height: 65px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.dureeDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.dureeDiv img {
+    width: 65px;
+    height: 65px;
+}
+
+#titre {
+    font: 1em "Inter", Arial, sans-serif;
+    margin: 0;
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+
+#detailsBilan {
+    font: 1em "Inter", Arial, sans-serif;
+    font-weight:initial;
+    margin: 0;
+    padding: 5px;
+    height: 100px;
+    overflow-y: auto;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+.historiqueList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.retour {
+    background-color: #020E36;
+    font: 2em "Jua", Arial, sans-serif;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 30px; /* Add this line to create rounded corners */
+    cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+#titreHistorique {
+    font: 2em "Inter", Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}

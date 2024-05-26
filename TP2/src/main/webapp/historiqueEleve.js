@@ -78,6 +78,9 @@ function importerHistorique() {
         
         
                     // Met à jour les étoiles
+                    for (let i = 1; i <= 5; i++) {
+                        $('#starn'+i).css('fill','gray');
+                    }
                     for (let i = 1; i <= note; i++) {
                         $('#starn'+i).css('fill','#FFD700');
                     }

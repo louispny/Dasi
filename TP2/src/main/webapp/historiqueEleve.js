@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const historiqueItems = document.querySelectorAll('.historique-item');
 
+    console.log('Historique Items:', historiqueItems);
+
     historiqueItems.forEach(item => {
         item.addEventListener('click', () => {
-
             const matiere = item.getAttribute('data-matiere');
             const intervenant = item.getAttribute('data-intervenant');
             const duree = item.getAttribute('data-duree');

@@ -31,31 +31,31 @@ function importerHistorique() {
             $('#nomEleve').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
             $('#classeEleve').html(response.eleve.classe); // Message pour le paragraphe de notification*/
             for (let i = 0; i < response.listeIntervention.length; i++) {
-            let laMatiere = response.listeIntervention[nbInterventions].matiere;
-            let nomIntervenant = response.listeIntervention[nbInterventions].intervenantNom;
-            let prenomIntervenant = response.listeIntervention[nbInterventions].intervenantPrenom;
-            let laDuree = response.listeIntervention[nbInterventions].duree;
-            let laNote = response.listeIntervention[nbInterventions].note;
-            let leBilan = response.listeIntervention[nbInterventions].bilan;
-            $('#liste').append('<div id="item' + nbInterventions + '" class="historique-item" data-matiere="' + laMatiere + '" data-intervenant="' + prenomIntervenant + " " + nomIntervenant + '" data-duree="' + laDuree + '" data-note="' + laNote + '" data-bilan="' + leBilan + '"></div>');
-            $('#item' + nbInterventions).append('<div class="ligne" id="ligne' + nbInterventions + '"></div>');
-            $('#ligne' + nbInterventions).append('<div class="matiereDiv">' + laMatiere + '</div>');
-            $('#ligne' + nbInterventions).append('<div id="stars' + nbInterventions + '" class="starsDiv"></div>');
-            for (let i = 1; i <= 5; i++) {
-                $('#stars' + nbInterventions).append('<svg id="starn' + i + '-' + nbInterventions + '" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clic" id="star' + i + '-' + nbInterventions + '" d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" /><path d="M0 0h24v24h-24z" fill="none" /></svg>');
-                if (i <= laNote) {
-                    $('#starn' + i + '-' + nbInterventions).css('fill', '#FFD700');
+                let laMatiere = response.listeIntervention[nbInterventions].matiere;
+                let nomIntervenant = response.listeIntervention[nbInterventions].intervenantNom;
+                let prenomIntervenant = response.listeIntervention[nbInterventions].intervenantPrenom;
+                let laDuree = response.listeIntervention[nbInterventions].duree;
+                let laNote = response.listeIntervention[nbInterventions].note;
+                let leBilan = response.listeIntervention[nbInterventions].bilan;
+                $('#liste').append('<div id="item' + nbInterventions + '" class="historique-item" data-matiere="' + laMatiere + '" data-intervenant="' + prenomIntervenant + " " + nomIntervenant + '" data-duree="' + laDuree + '" data-note="' + laNote + '" data-bilan="' + leBilan + '"></div>');
+                $('#item' + nbInterventions).append('<div class="ligne" id="ligne' + nbInterventions + '"></div>');
+                $('#ligne' + nbInterventions).append('<div class="matiereDiv">' + laMatiere + '</div>');
+                $('#ligne' + nbInterventions).append('<div id="stars' + nbInterventions + '" class="starsDiv"></div>');
+                for (let i = 1; i <= 5; i++) {
+                    $('#stars' + nbInterventions).append('<svg id="starn' + i + '-' + nbInterventions + '" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clic" id="star' + i + '-' + nbInterventions + '" d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" /><path d="M0 0h24v24h-24z" fill="none" /></svg>');
+                    if (i <= laNote) {
+                        $('#starn' + i + '-' + nbInterventions).css('fill', '#FFD700');
+                    }
                 }
+                $('#item' + nbInterventions).append('<div class="intervenantDiv" id="intervenant' + nbInterventions + '"></div>');
+                $('#intervenant' + nbInterventions).append('<img src="images/profil.png" alt="profil" class="teacher" />');
+                $('#intervenant' + nbInterventions).append('<div class="intervenantDenom">' + prenomIntervenant + " " + nomIntervenant + '</div>');
+                $('#item' + nbInterventions).append('<div class="dureeDiv" id="duree' + nbInterventions + '"></div>');
+                $('#duree' + nbInterventions).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
+                $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');
+                nbInterventions++;
             }
-            $('#item' + nbInterventions).append('<div class="intervenantDiv" id="intervenant' + nbInterventions + '"></div>');
-            $('#intervenant' + nbInterventions).append('<img src="images/profil.png" alt="profil" class="teacher" />');
-            $('#intervenant' + nbInterventions).append('<div class="intervenantDenom">' + prenomIntervenant + " " + nomIntervenant + '</div>');
-            $('#item' + nbInterventions).append('<div class="dureeDiv" id="duree' + nbInterventions + '"></div>');
-            $('#duree' + nbInterventions).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
-            $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');
-            nbInterventions++;
-            }
-
+            $('#titreHistorique').html("Hstorique de soutien (" + nbInterventions + ")"); // Message pour le paragraphe de notification
 
             const historiqueItems = document.querySelectorAll('.historique-item');
 

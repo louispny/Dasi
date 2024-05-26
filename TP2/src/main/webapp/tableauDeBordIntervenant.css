@@ -31,3 +31,11 @@ body {
     gap: 10px; /* Add this line to create space between child containers */
     margin-top: 20px;
 }
+
+.highcharts-container {
+    margin: 50px;
+    flex: 1;
+    background-color: white;
+    border-radius: 40px; /* Add this line to create rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}

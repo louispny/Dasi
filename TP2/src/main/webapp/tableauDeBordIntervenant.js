@@ -27,6 +27,8 @@ function chargerStats1() {
             console.log('hess') ;
             // // TODO: afficher les informations de l'élève
             // $('#nomIntervenant').html(response.utilisateur.prenom + " " + response.utilisateur.nom); // Message pour le paragraphe de notification
+            
+            buildBarChart('container-1', lineChartData);
         }
         else {
             // $('#nomIntervenant').html("Jsp"); // Message pour le paragraphe de notification
@@ -67,4 +69,9 @@ function buildBarChart(container, graphData) {
                     },
                     series: [{name: 'Données', data: graphData.data}]
                 });
-            }
+}
+$(document).ready( function () {
+    $('#historique').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        window.location.href = "historiqueIntervenant.html" ;
+    });
+});

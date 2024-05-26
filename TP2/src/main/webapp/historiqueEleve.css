@@ -72,7 +72,7 @@ body {
     width: 35vw;
     font: 1em "Inter", Arial, sans-serif;
     padding: 20px;
-    /*visibility: hidden;*/
+    cursor: pointer;
 }
 
 .ligne {

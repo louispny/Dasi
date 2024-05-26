@@ -38,4 +38,19 @@ body {
     background-color: white;
     border-radius: 40px; /* Add this line to create rounded corners */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    height: 60vh;
+}
+
+#historique {
+    background-color: #020E36;
+    font: 1.5em "Jua", Arial, sans-serif;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 30px; /* Add this line to create rounded corners */
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    margin-left: 50px;
+
 }

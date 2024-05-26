@@ -84,4 +84,9 @@ $(document).ready( function () {
         window.location.href = "index.html" ;
     });
 });
-        
+ 
+$(document).ready( function () {
+    $('#boutonTableau').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        window.location.href = "tableauDeBordIntervenant.html" ;
+    });
+});

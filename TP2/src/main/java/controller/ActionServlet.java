@@ -9,6 +9,7 @@ package controller;
 import controller.sous_controller.AuthentifierIntervenantAction;
 import controller.sous_controller.AuthentifierEleveAction;
 import controller.sous_controller.DemanderInterventionAction;
+import controller.sous_controller.DureeSoutienNiveauAction;
 import controller.sous_controller.EnvoyerBilanAction;
 import controller.sous_controller.EnvoyerNoteAction;
 import controller.sous_controller.GetHistoriqueEleveAction;
@@ -32,6 +33,7 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 import metier.modele.Eleve;
 import metier.modele.Intervenant;
+import vue.DureeSoutienNiveauSerialisation;
 import vue.EnvoiBilanSerialisation;
 import vue.EnvoiNoteSerialisation;
 import vue.HistoriqueEleveSerialisation;
@@ -161,6 +163,11 @@ public class ActionServlet extends HttpServlet {
                 case "getHistoriqueIntervenant" : {
                     new GetHistoriqueIntervenantAction().executer(request) ; 
                     new HistoriqueIntervenantSerialisation().appliquer(request, response) ; 
+                    break ; 
+                }
+                case "stats" : {
+                    new DureeSoutienNiveauAction().executer(request) ; 
+                    new DureeSoutienNiveauSerialisation().appliquer(request, response) ; 
                     break ; 
                 }
             }

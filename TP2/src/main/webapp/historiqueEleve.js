@@ -102,6 +102,6 @@ function importerHistorique() {
 }
 
 //bouton retour
-$('#retour').on('click', () => {
+$('.retour').on('click', () => {
     window.location.href = 'accueilEleve.html';
 });

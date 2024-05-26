@@ -30,6 +30,7 @@ function importerHistorique() {
             // // TODO: afficher les informations de l'élève
             $('#nomEleve').html(response.eleve.prenom + " " + response.eleve.nom); // Message pour le paragraphe de notification
             $('#classeEleve').html(response.eleve.classe); // Message pour le paragraphe de notification*/
+            for (let i = 0; i < response.listeIntervention.length; i++) {
             let laMatiere = response.listeIntervention[nbInterventions].matiere;
             let nomIntervenant = response.listeIntervention[nbInterventions].intervenantNom;
             let prenomIntervenant = response.listeIntervention[nbInterventions].intervenantPrenom;
@@ -52,6 +53,8 @@ function importerHistorique() {
             $('#item' + nbInterventions).append('<div class="dureeDiv" id="duree' + nbInterventions + '"></div>');
             $('#duree' + nbInterventions).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
             $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');
+            nbInterventions++;
+            }
 
 
             const historiqueItems = document.querySelectorAll('.historique-item');

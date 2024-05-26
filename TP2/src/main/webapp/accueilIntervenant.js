@@ -57,6 +57,11 @@ function afficherInformationsIntervention() {
         else {
             $('#accueilIntervenant').css('display', 'none');
             $('#aucuneDemande').css('display', 'block');
+            //on désactive le bouton de soutien
+            $('#boutonSoutien').prop('disabled', true);
+            $('#boutonSoutien').css('background-color', 'darkgray');
+            $('#boutonSoutien').css('color', 'gray');
+            $('#boutonSoutien').css('cursor', 'not-allowed');
         }
     })
     .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX

@@ -42,6 +42,9 @@ function importerHistorique() {
             $('#ligne' + nbInterventions).append('<div id="stars' + nbInterventions + '" class="starsDiv"></div>');
             for (let i = 1; i <= 5; i++) {
                 $('#stars' + nbInterventions).append('<svg id="starn' + i + '.' + nbInterventions + '" class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clic" id="star' + i + '.' + nbInterventions + '" d="M12 2l2.29 7.05h7.37l-5.98 4.36 2.29 7.05-6.02-4.36-6.02 4.36 2.29-7.05-5.98-4.36h7.37z" /><path d="M0 0h24v24h-24z" fill="none" /></svg>');
+                if (i <= laNote) {
+                    $('#starn' + i + '.' + nbInterventions).css('fill', '#FFD700');
+                }
             }
             $('#item' + nbInterventions).append('<div class="intervenantDiv" id="intervenant' + nbInterventions + '"></div>');
             $('#intervenant' + nbInterventions).append('<img src="images/profil.png" alt="profil" class="teacher" />');

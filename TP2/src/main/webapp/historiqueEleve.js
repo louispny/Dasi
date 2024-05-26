@@ -5,13 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     importerHistorique() ;
 
     const historiqueItems = document.querySelectorAll('.historique-item');
-    const detailsContainer = document.querySelector('.details-container .details-item');
-    const retourButton = document.querySelector('.retour');
 
     historiqueItems.forEach(item => {
         item.addEventListener('click', () => {
-
-            $('#detail').css('visibility', 'visible');
 
             const matiere = item.getAttribute('data-matiere');
             const intervenant = item.getAttribute('data-intervenant');
@@ -20,15 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const bilan = item.getAttribute('data-bilan');
 
             // Met à jour les détails
-            detailsContainer.querySelector('.matiere').textContent = matiere;
-            detailsContainer.querySelector('.intervenantClass').textContent = intervenant;
-            detailsContainer.querySelector('.dureeClass').textContent = duree;
-            detailsContainer.querySelector('.bilanClass').textContent = bilan;
+            $('#detailMatiere').html(matiere);
+            $('#intervenantNom').html(intervenant);
+            $('#dureeText').html(duree + ' minutes');
+            $('#detailsBilan').html(bilan);
+
+
 
             // Met à jour les étoiles
             for (let i = 1; i <= note; i++) {
                 $('#starn'+i).css('fill','#FFD700');
             }
+
+            $('#detail').css('visibility', 'visible');
+
         });
     });
 });

@@ -59,7 +59,7 @@ body {
     width: 35vw;
     font: 1em "Inter", Arial, sans-serif;
     padding: 20px;
-    /*visibility: hidden;*/
+    visibility: hidden;
 }
 
 .historique-item {

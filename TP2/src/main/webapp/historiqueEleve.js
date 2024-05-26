@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const duree = item.getAttribute('data-duree');
             const note = item.getAttribute('data-note');
             const bilan = item.getAttribute('data-bilan');
-
+            console.log('Matière:', matiere);
             // Met à jour les détails
             $('#detailMatiere').html(matiere);
             $('#intervenantNom').html(intervenant);

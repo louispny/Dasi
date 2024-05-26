@@ -172,3 +172,10 @@ svg {
     bottom: 20px;
     right: 30px;
 }
+
+#titreHistorique {
+    font: 2em "Jua", Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}

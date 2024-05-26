@@ -4,6 +4,56 @@
  * and open the template in the editor.
  */
 
+function buildBarChart(container, graphData) {
+
+    Highcharts.chart(container, {
+
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Température en Amphi'
+        },
+        subtitle: {
+            text: 'Source: a priori'
+        },
+        xAxis: {
+            categories: graphData.labels
+        },
+        yAxis: {
+            title: {
+                text: 'Température (°C)'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{name: 'Données', data: graphData.data}]
+    });
+}
+function buildPieChart(container, graphData) {
+
+    Highcharts.chart(container, {
+
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: "Nombre d'heures de cours données ce mois-ci"
+        },
+        subtitle: {
+            text: 'Temps en heure - Source : le back-end'
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{name: graphData.label, data: graphData.data}]
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     
     chargerStats1() ;

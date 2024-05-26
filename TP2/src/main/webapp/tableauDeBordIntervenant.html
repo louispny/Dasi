@@ -3,76 +3,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Demonstrat'IF - Graphiques HighCharts</title>
-
-        <style type="text/css">
-            h1 { text-align: center; }
-            .highcharts-container {
-                max-width: 800px;
-                height: 400px;
-                margin: 1em auto;
-            }
-        </style>
+        <title>Tableau de bord</title>
+        <link rel="stylesheet" type="text/css" href="tableauDeBordIntervenant.css">
+        <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <h1>Démonstrat'IF &ndash; Graphiques HighCharts</h1>
         <div id="container-1" class="highcharts-container"></div>
         <div id="container-2" class="highcharts-container"></div>
         <button id ="historique">Historique</button> 
         <script src="tableauDeBordIntervenant.js"></script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script type="text/javascript">
-            
-            function buildBarChart(container, graphData) {
-
-                Highcharts.chart(container, {
-
-                    chart: {
-                        type: 'column'
-                    },
-                    title: {
-                        text: 'Température en Amphi'
-                    },
-                    subtitle: {
-                        text: 'Source: a priori'
-                    },
-                    xAxis: {
-                        categories: graphData.labels
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Température (°C)'
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: [{name: 'Données', data: graphData.data}]
-                });
-            }
-            function buildPieChart(container, graphData) {
-
-                Highcharts.chart(container, {
-
-                    chart: {
-                        type: 'pie'
-                    },
-                    title: {
-                        text: "Nombre d'heures de cours données ce mois-ci"
-                    },
-                    subtitle: {
-                        text: 'Temps en heure - Source : le back-end'
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: [{name: graphData.label, data: graphData.data}]
-                });
-            }
-        </script>
     </body>
 </html>

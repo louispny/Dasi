@@ -46,15 +46,13 @@ body {
 
 #historique {
     background-color: #020E36;
-    font: 2em "Jua", Arial, sans-serif;
+    font: 3em "Jua", Arial, sans-serif;
     color: white;
     border: none;
     padding: 5px;
     border-radius: 30px; /* Add this line to create rounded corners */
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 20px;
-    margin-left: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
     cursor: pointer;
 }
 
@@ -62,19 +60,21 @@ body {
     display: flex;
     flex-direction: row;
     gap: 10px; /* Add this line to create space between child containers */
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 #halfLeft {
     display: flex;
     flex: 1;
     align-items: center;
+    justify-content: center;
 }
 
 #halfRight {
     display: flex;
     flex: 1;
     align-items: right;
+    justify-content: right;
 }
 
 #retour {
@@ -86,8 +86,6 @@ body {
     border-radius: 30px; /* Add this line to create rounded corners */
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 20px;
-    margin-left: 50px;
     align-self: right;
     cursor: pointer;
 }

@@ -115,7 +115,7 @@ body {
 
 #accueilEleve {
     padding: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
     background-color: #ffffff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Add this line to create rounded corners */

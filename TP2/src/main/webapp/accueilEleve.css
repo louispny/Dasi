@@ -48,6 +48,16 @@ body {
     cursor: pointer;
 }
 
+.boutonPop {
+    background-color: #020E36;
+    font: 1em "Jua", Arial, sans-serif;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 30px; /* Add this line to create rounded corners */
+    cursor: pointer;
+}
+
 #infoseleve {
     padding: 10px;
     background-color: #ffffff;

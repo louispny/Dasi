@@ -117,6 +117,10 @@ $(document).ready( function () {
                 else {
                     $('#demandeRefusee').css('display', 'block');
                 }
+                //on désactive tous les autres boutons
+                $('.bouton1').prop('disabled', true);
+                $('.bouton2').prop('disabled', true);
+                $('.bouton3').prop('disabled', true);
             })
             .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
                 console.log('Error',error); // LOG dans Console Javascript

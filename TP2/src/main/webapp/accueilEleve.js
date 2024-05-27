@@ -121,6 +121,12 @@ $(document).ready( function () {
                 $('.bouton1').prop('disabled', true);
                 $('.bouton2').prop('disabled', true);
                 $('.bouton3').prop('disabled', true);
+                $('.bouton4').prop('disabled', true);
+                //on enlève le curseur pointer
+                $('.bouton1').css('cursor', 'default');
+                $('.bouton2').css('cursor', 'default');
+                $('.bouton3').css('cursor', 'default');
+                $('.bouton4').css('cursor', 'default');
             })
             .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
                 console.log('Error',error); // LOG dans Console Javascript

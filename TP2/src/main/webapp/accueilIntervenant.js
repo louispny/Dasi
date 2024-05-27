@@ -70,6 +70,33 @@ function afficherInformationsIntervention() {
     });
 }
 
+$(document).ready( function () {
+    $('#boutonDeconnexion').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        // Appel AJAX
+        $.ajax({
+            url: './ActionServlet',
+            method: 'POST',
+            data: {
+                todo: 'deconnecter'
+            },
+            dataType: 'json'
+        })
+        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response',response); // LOG dans Console Javascript
+            if (response.deconnecter) {
+                window.location.href = "index.html";
+            }
+            else {
+                alert("Erreur lors de la déconnexion");
+            }
+        })
+        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error',error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        });
+    });
+});
+
 
 
 
@@ -81,12 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
 $(document).ready( function () {
     $('#boutonSoutien').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
         window.location.href = "visioIntervenant.html";
-    });
-});
-        
-$(document).ready( function () {
-    $('#boutonDeconnexion').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
-        window.location.href = "index.html" ;
     });
 });
  

@@ -65,8 +65,16 @@ body {
     margin-top: 20px;
 }
 
-#boutons > * {
-    flex: 1; /* Add this line to make the child elements share the available space equally */
+#halfLeft {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+#halfRight {
+    display: flex;
+    flex: 1;
+    align-items: right;
 }
 
 #retour {

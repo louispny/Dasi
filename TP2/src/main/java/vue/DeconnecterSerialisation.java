@@ -21,7 +21,7 @@ public class DeconnecterSerialisation extends Serialisation {
         
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create(); 
         JsonObject obj = new JsonObject() ;
-        obj.addProperty("deconnecter", request.getAttribute("deconnecter"));
+        obj.addProperty("deconnecter", (Boolean)request.getAttribute("deconnecter"));
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out ;
         try {

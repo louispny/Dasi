@@ -53,9 +53,9 @@ function afficherInformationsIntervention() {
             $('#niveauScolaire').html(response.intervention.classe) ; 
             $('#matiereEnseignee').html(response.intervention.matiere) ;
             $('#detailsDemande').html(response.intervention.details) ;
+            $('#accueilIntervenant').css('display', 'block');
         }
         else {
-            $('#accueilIntervenant').css('display', 'none');
             $('#aucuneDemande').css('display', 'block');
             //on désactive le bouton de soutien
             $('#boutonSoutien').prop('disabled', true);

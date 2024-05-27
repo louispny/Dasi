@@ -52,7 +52,7 @@ function importerHistorique() {
                 $('#eleve' + nbInterventions).append('<div class="eleveDenom">' + prenomEleve + " " + nomEleve + '</div>');
                 $('#item' + nbInterventions).append('<div class="dureeDiv" id="duree' + nbInterventions + '"></div>');
                 $('#duree' + nbInterventions).append('<img src="images/horloge.png" alt="horloge" class="clock" />');
-                $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + '</div>');
+                $('#duree' + nbInterventions).append('<div class="duree">' + laDuree + ' minutes</div>');
                 nbInterventions++;
             }
             $('#titreHistorique').html("Historique des soutiens (" + nbInterventions + ")"); // Message pour le paragraphe de notification

@@ -106,7 +106,7 @@ h3 {
     margin: 0 auto; /* Add this line to center the form horizontally */
     margin-right: 10vw; /* Add this line to set the distance from the right edge */
     margin-left: 10vw; /* Add this line to set the distance from the left edge */
-    /*display: none;*/
+    display: none;
 }
 
 #texteDemandeSoutien {

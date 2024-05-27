@@ -170,6 +170,10 @@ public class ActionServlet extends HttpServlet {
                     new DureeSoutienNiveauSerialisation().appliquer(request, response) ; 
                     break ; 
                 }
+                case "deconnecter" : {
+                    session.invalidate();
+                    break;
+                }
             }
             
             /*

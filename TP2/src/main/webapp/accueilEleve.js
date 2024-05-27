@@ -130,6 +130,37 @@ $(document).ready( function () {
 });
 
 $(document).ready( function () {
+    $('#boutonDeconnexion').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        console.log("clic sur le bouton de déconnexion"); // LOG dans Console Javascript
+        //$('#messageErreurText').html("Déconnexion..."); // Message pour le paragraphe de notification
+
+        // Appel AJAX
+        $.ajax({
+            url: './ActionServlet',
+            method: 'POST',
+            data: {
+                todo: 'deconnecter'
+            },
+            dataType: 'json'
+        })
+        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response',response); // LOG dans Console Javascript
+            if (response.deconnecter) {
+                window.location.href = "index.html";
+            }
+            else {
+                $('#explicationDemande').html("Erreur de déconnexion"); // Message pour le paragraphe de notification
+            }
+        })
+        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error',error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        });
+    });
+});
+
+
+$(document).ready( function () {
     $('#boutonRetour').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
         $('#demandeRefusee').css('display', 'none');
     });
@@ -141,11 +172,6 @@ $(document).ready( function () {
     });
 });
         
-$(document).ready( function () {
-    $('#boutonDeconnexion').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
-        window.location.href = "index.html" ;
-    });
-});
 $(document).ready( function () {
     $('#boutonHisto').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
         window.location.href = "historiqueEleve.html";

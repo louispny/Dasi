@@ -18,10 +18,12 @@ public class DeconnecterSerialisation extends Serialisation {
     @Override
     public void appliquer(HttpServletRequest request, HttpServletResponse response)
     {
+        System.out.println("DeconnecterSerialisation");
         
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create(); 
         JsonObject obj = new JsonObject() ;
-        obj.addProperty("deconnecter", (Boolean)request.getAttribute("deconnecter"));
+        Boolean deco = (Boolean) request.getAttribute("deconnexion") ;
+        obj.addProperty("deconnecter", deco);
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out ;
         try {

@@ -8,6 +8,7 @@ public class DeconnecterAction extends Action {
         public void executer(HttpServletRequest request) {; 
             HttpSession session = request.getSession(true);
             session.invalidate();
-            request.setAttribute("deconnecter", true) ;
+            System.out.println("DeconnexionAction");
+            request.setAttribute("deconnexion", true) ;
         }
 }

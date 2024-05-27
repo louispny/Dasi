@@ -19,7 +19,7 @@ function buildBarChart(container, graphData) {
         },
         yAxis: {
             title: {
-                text: 'Durée en minutes'
+                text: 'Durée (minutes)'
             }
         },
         legend: {

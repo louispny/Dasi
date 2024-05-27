@@ -19,6 +19,7 @@ import controller.sous_controller.GetInfosEleveIntervention;
 import controller.sous_controller.GetInfosIntervenant;
 import controller.sous_controller.GetMatieresAction;
 import controller.sous_controller.InscrireEleveAction;
+import controller.sous_controller.DeconnecterAction;
 
 import dao.JpaUtil;
 import java.io.IOException;
@@ -42,6 +43,7 @@ import vue.InterventionSerialisation;
 import vue.MatieresSerialisation;
 import vue.ProfilEleveSerialisation;
 import vue.ProfilUtilisateurSerialisation;
+import vue.DeconnecterSerialisation;
 
 /**
  *

@@ -171,7 +171,8 @@ public class ActionServlet extends HttpServlet {
                     break ; 
                 }
                 case "deconnecter" : {
-                    session.invalidate();
+                    new DeconnecterAction().executer(request) ;
+                    new DeconnecterSerialisation().appliquer(request, response);
                     break;
                 }
             }

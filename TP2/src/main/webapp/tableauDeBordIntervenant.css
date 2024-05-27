@@ -41,7 +41,7 @@ body {
     background-color: white;
     border-radius: 40px; /* Add this line to create rounded corners */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    height: 60vh;
+    height: 50vh;
 }
 
 #historique {
@@ -50,7 +50,7 @@ body {
     color: white;
     border: none;
     padding: 5px;
-    border-radius: 30px; /* Add this line to create rounded corners */
+    border-radius: 60px; /* Add this line to create rounded corners */
     padding-left: 150px;
     padding-right: 150px;
     cursor: pointer;
@@ -60,7 +60,8 @@ body {
     display: flex;
     flex-direction: row;
     gap: 10px; /* Add this line to create space between child containers */
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #halfLeft {
@@ -73,19 +74,22 @@ body {
 #halfRight {
     display: flex;
     flex: 1;
-    align-items: right;
     justify-content: right;
+    align-items: end;
 }
+
 
 #retour {
     background-color: #020E36;
-    font: 1.5em "Jua", Arial, sans-serif;
+    font: 2em "Jua", Arial, sans-serif;
+    height: fit-content;
     color: white;
     border: none;
     padding: 5px;
     border-radius: 30px; /* Add this line to create rounded corners */
     padding-left: 20px;
     padding-right: 20px;
+    margin-right: 30px;
     align-self: right;
     cursor: pointer;
 }

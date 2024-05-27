@@ -42,10 +42,10 @@ function buildPieChart(container, graphData) {
             type: 'pie'
         },
         title: {
-            text: "Nombre d'heures de cours données ce mois-ci"
+            text: "Temps de cours données ce mois-ci"
         },
         subtitle: {
-            text: 'Temps en heure - Source : le back-end'
+            text: 'Temps en minute - Source : le back-end'
         },
         credits: {
             enabled: false
@@ -108,5 +108,11 @@ function chargerStats1() {
 $(document).ready( function () {
     $('#historique').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
         window.location.href = "historiqueIntervenant.html" ;
+    });
+});
+
+$(document).ready( function () {
+    $('#retour').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
+        window.location.href = "accueilIntervenant.html" ;
     });
 });

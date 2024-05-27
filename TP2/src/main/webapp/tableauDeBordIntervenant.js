@@ -12,17 +12,14 @@ function buildBarChart(container, graphData) {
             type: 'column'
         },
         title: {
-            text: 'Température en Amphi'
-        },
-        subtitle: {
-            text: 'Source: a priori'
+            text: 'Répartition des cours donnés ce mois-ci par niveau de classe'
         },
         xAxis: {
             categories: graphData.labels
         },
         yAxis: {
             title: {
-                text: 'Température (°C)'
+                text: 'Durée en minutes'
             }
         },
         legend: {
@@ -43,9 +40,6 @@ function buildPieChart(container, graphData) {
         },
         title: {
             text: "Temps de cours données ce mois-ci"
-        },
-        subtitle: {
-            text: 'Temps en minute - Source : le back-end'
         },
         credits: {
             enabled: false
@@ -86,11 +80,11 @@ function chargerStats1() {
             const combinedArray = response.ClasseSoutienMatiere.map((name, index) => {
                 return {
                     name: name,
-                    y: response.DureeSoutienMatiere[index]/60
+                    y: response.DureeSoutienMatiere[index]
                 };
               
             }).filter(item => item.y !== 0);
-            var proportionData = {label : "Nombre d'heures de cours données ce mois-ci" , data : combinedArray}
+            var proportionData = {label : "Nombre de minutes de cours données ce mois-ci" , data : combinedArray}
             buildBarChart('container-1', lineChartData);
             buildPieChart('container-2', proportionData) ; 
             console.log(combinedArray) ; 

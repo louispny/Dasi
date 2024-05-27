@@ -177,6 +177,10 @@ public class ActionServlet extends HttpServlet {
                     new DeconnecterSerialisation().appliquer(request, response);
                     break;
                 }
+                default : {
+                    System.out.println("Action inconnue");
+                    break;
+                }
             }
             
             /*

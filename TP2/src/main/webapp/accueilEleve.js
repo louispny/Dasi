@@ -146,7 +146,7 @@ $(document).ready( function () {
         .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response',response); // LOG dans Console Javascript
             if (response.deconnecter) {
-                window.location.href = "index.html";
+                //window.location.href = "index.html";
             }
             else {
                 $('#explicationDemande').html("Erreur de déconnexion"); // Message pour le paragraphe de notification
